@@ -1,0 +1,5 @@
+https://github.com/RequestNetwork/Request_App
+http://truffleframework.com/boxes/status
+https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts
+
+https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/ownership/Heritable.sol
