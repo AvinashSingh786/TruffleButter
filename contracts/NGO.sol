@@ -27,7 +27,8 @@ contract NGO {
 
     // adds a merchant if it does not exist
     function addMerchant(address merchant, string name, string typeOfGoods) public {
-        // require(findMerchant(merchant).merchantAddress == address(0)); 
+        var (m,,,) = findMerchant(merchant);
+        require(m == address(0)); 
         merchants[msg.sender] = Merchant(merchant, name, typeOfGoods, 0);
     }
 
