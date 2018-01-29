@@ -5,6 +5,51 @@
       "constant": false,
       "inputs": [
         {
+          "name": "beneficiary",
+          "type": "address"
+        },
+        {
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "name": "addBeneficiary",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "beneficiary",
+          "type": "address"
+        }
+      ],
+      "name": "findBeneficiary",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
           "name": "merchant",
           "type": "address"
         },
@@ -66,18 +111,18 @@
       "type": "constructor"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b60405160208061071a8339810160405280805190602001909190505080600181905550506106d8806100426000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680639f98e0f314610051578063f1afc11c14610110575b600080fd5b341561005c57600080fd5b61010e600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610268565b005b341561011b57600080fd5b610147600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610372565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001848152602001838103835286818151815260200191508051906020019080838360005b838110156101c35780820151818401526020810190506101a8565b50505050905090810190601f1680156101f05780820380516001836020036101000a031916815260200191505b50838103825285818151815260200191508051906020019080838360005b8381101561022957808201518184015260208101905061020e565b50505050905090810190601f1680156102565780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b6080604051908101604052808473ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182815260200160008152506000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906103429291906105f3565b50604082015181600201908051906020019061035f9291906105f3565b5060608201518160030155905050505050565b600061037c610673565b610384610673565b60008060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001016000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030154828054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105415780601f1061051657610100808354040283529160200191610541565b820191906000526020600020905b81548152906001019060200180831161052457829003601f168201915b50505050509250818054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105dd5780601f106105b2576101008083540402835291602001916105dd565b820191906000526020600020905b8154815290600101906020018083116105c057829003601f168201915b5050505050915093509350935093509193509193565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061063457805160ff1916838001178555610662565b82800160010185558215610662579182015b82811115610661578251825591602001919060010190610646565b5b50905061066f9190610687565b5090565b602060405190810160405280600081525090565b6106a991905b808211156106a557600081600090555060010161068d565b5090565b905600a165627a7a723058203eff0a4a455d6a1993c574eb789ed49d94621d25de4f0906daad5bb6e6c513760029",
-  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680639f98e0f314610051578063f1afc11c14610110575b600080fd5b341561005c57600080fd5b61010e600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610268565b005b341561011b57600080fd5b610147600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610372565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001848152602001838103835286818151815260200191508051906020019080838360005b838110156101c35780820151818401526020810190506101a8565b50505050905090810190601f1680156101f05780820380516001836020036101000a031916815260200191505b50838103825285818151815260200191508051906020019080838360005b8381101561022957808201518184015260208101905061020e565b50505050905090810190601f1680156102565780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b6080604051908101604052808473ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182815260200160008152506000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906103429291906105f3565b50604082015181600201908051906020019061035f9291906105f3565b5060608201518160030155905050505050565b600061037c610673565b610384610673565b60008060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001016000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030154828054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105415780601f1061051657610100808354040283529160200191610541565b820191906000526020600020905b81548152906001019060200180831161052457829003601f168201915b50505050509250818054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105dd5780601f106105b2576101008083540402835291602001916105dd565b820191906000526020600020905b8154815290600101906020018083116105c057829003601f168201915b5050505050915093509350935093509193509193565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061063457805160ff1916838001178555610662565b82800160010185558215610662579182015b82811115610661578251825591602001919060010190610646565b5b50905061066f9190610687565b5090565b602060405190810160405280600081525090565b6106a991905b808211156106a557600081600090555060010161068d565b5090565b905600a165627a7a723058203eff0a4a455d6a1993c574eb789ed49d94621d25de4f0906daad5bb6e6c513760029",
-  "sourceMap": "63:1072:0:-;;;420:81;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;480:14;471:6;:23;;;;420:81;63:1072;;;;;;",
-  "deployedSourceMap": "63:1072:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;892:235;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;583:259;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;892:235:0;1080:40;;;;;;;;;1089:8;1080:40;;;;;;1099:4;1080:40;;;;1105:11;1080:40;;;;1118:1;1080:40;;;1056:9;:21;1066:10;1056:21;;;;;;;;;;;;;;;:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;892:235;;;:::o;583:259::-;644:7;653:6;;:::i;:::-;661;;:::i;:::-;669:4;693:9;:19;703:8;693:19;;;;;;;;;;;;;;;:35;;;;;;;;;;;;730:9;:19;740:8;730:19;;;;;;;;;;;;;;;:24;;769:9;:19;779:8;769:19;;;;;;;;;;;;;;;:31;;802:9;:19;812:8;802:19;;;;;;;;;;;;;;;:32;;;685:150;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;583:259;;;;;:::o;63:1072::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.18;\n\n// NGO contract, for managing funds\n\ncontract NGO {\n\n    struct Merchant {\n        address merchantAddress; \n        string name;\n        string typeOfGoods; // colon seperated list of goods sold\n        uint tokenBalance; // number of tokens the Merchant has to redeem\n    }\n\n    mapping (address => Merchant) merchants;\n    uint tokens;\n\n    // constructor to initialize number of tokens\n    function NGO(uint numberOfTokens) public {\n        tokens = numberOfTokens;\n    }\n    \n    // finds and returns if a Merchant exists with the provided address\n    function findMerchant(address merchant) public view returns (address, string, string, uint) {\n        return (merchants[merchant].merchantAddress, merchants[merchant].name, \n            merchants[merchant].typeOfGoods, merchants[merchant].tokenBalance);\n    }\n\n    // adds a merchant if it does not exist\n    function addMerchant(address merchant, string name, string typeOfGoods) public {\n        // require(findMerchant(merchant).merchantAddress == address(0)); \n        merchants[msg.sender] = Merchant(merchant, name, typeOfGoods, 0);\n    }\n\n    \n}\n",
+  "bytecode": "0x6060604052341561000f57600080fd5b604051602080610b1c833981016040528080519060200190919050508060028190555050610ada806100426000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806332b578e5146100675780638287e61e146100e35780639f98e0f3146101cf578063f1afc11c1461028e575b600080fd5b341561007257600080fd5b6100e1600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506103e6565b005b34156100ee57600080fd5b61011a600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506104cd565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b83811015610192578082015181840152602081019050610177565b50505050905090810190601f1680156101bf5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34156101da57600080fd5b61028c600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061066a565b005b341561029957600080fd5b6102c5600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610774565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001848152602001838103835286818151815260200191508051906020019080838360005b83811015610341578082015181840152602081019050610326565b50505050905090810190601f16801561036e5780820380516001836020036101000a031916815260200191505b50838103825285818151815260200191508051906020019080838360005b838110156103a757808201518184015260208101905061038c565b50505050905090810190601f1680156103d45780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b6060604051908101604052808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020016000815250600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906104bb9291906109f5565b50604082015181600201559050505050565b60006104d7610a75565b6000600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101600160008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154818054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106565780601f1061062b57610100808354040283529160200191610656565b820191906000526020600020905b81548152906001019060200180831161063957829003601f168201915b505050505091509250925092509193909250565b6080604051908101604052808473ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182815260200160008152506000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906107449291906109f5565b5060408201518160020190805190602001906107619291906109f5565b5060608201518160030155905050505050565b600061077e610a75565b610786610a75565b60008060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001016000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030154828054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109435780601f1061091857610100808354040283529160200191610943565b820191906000526020600020905b81548152906001019060200180831161092657829003601f168201915b50505050509250818054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109df5780601f106109b4576101008083540402835291602001916109df565b820191906000526020600020905b8154815290600101906020018083116109c257829003601f168201915b5050505050915093509350935093509193509193565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a3657805160ff1916838001178555610a64565b82800160010185558215610a64579182015b82811115610a63578251825591602001919060010190610a48565b5b509050610a719190610a89565b5090565b602060405190810160405280600081525090565b610aab91905b80821115610aa7576000816000905550600101610a8f565b5090565b905600a165627a7a723058207b97d4f32e744f2f9fbafb9ef0e31a38f54c38ba71097692a8cca0ca81ed0e880029",
+  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806332b578e5146100675780638287e61e146100e35780639f98e0f3146101cf578063f1afc11c1461028e575b600080fd5b341561007257600080fd5b6100e1600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506103e6565b005b34156100ee57600080fd5b61011a600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506104cd565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b83811015610192578082015181840152602081019050610177565b50505050905090810190601f1680156101bf5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34156101da57600080fd5b61028c600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061066a565b005b341561029957600080fd5b6102c5600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610774565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001848152602001838103835286818151815260200191508051906020019080838360005b83811015610341578082015181840152602081019050610326565b50505050905090810190601f16801561036e5780820380516001836020036101000a031916815260200191505b50838103825285818151815260200191508051906020019080838360005b838110156103a757808201518184015260208101905061038c565b50505050905090810190601f1680156103d45780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b6060604051908101604052808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020016000815250600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906104bb9291906109f5565b50604082015181600201559050505050565b60006104d7610a75565b6000600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101600160008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154818054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106565780601f1061062b57610100808354040283529160200191610656565b820191906000526020600020905b81548152906001019060200180831161063957829003601f168201915b505050505091509250925092509193909250565b6080604051908101604052808473ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182815260200160008152506000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010190805190602001906107449291906109f5565b5060408201518160020190805190602001906107619291906109f5565b5060608201518160030155905050505050565b600061077e610a75565b610786610a75565b60008060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001016000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030154828054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109435780601f1061091857610100808354040283529160200191610943565b820191906000526020600020905b81548152906001019060200180831161092657829003601f168201915b50505050509250818054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109df5780601f106109b4576101008083540402835291602001916109df565b820191906000526020600020905b8154815290600101906020018083116109c257829003601f168201915b5050505050915093509350935093509193509193565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a3657805160ff1916838001178555610a64565b82800160010185558215610a64579182015b82811115610a63578251825591602001919060010190610a48565b5b509050610a719190610a89565b5090565b602060405190810160405280600081525090565b610aab91905b80821115610aa7576000816000905550600101610a8f565b5090565b905600a165627a7a723058207b97d4f32e744f2f9fbafb9ef0e31a38f54c38ba71097692a8cca0ca81ed0e880029",
+  "sourceMap": "63:1983:0:-;;;680:81;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;740:14;731:6;:23;;;;680:81;63:1983;;;;;;",
+  "deployedSourceMap": "63:1983:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1207:208;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;817:380;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1803:235:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1494:259;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1207:208:0;1377:31;;;;;;;;;1389:11;1377:31;;;;;;1402:2;1377:31;;;;1406:1;1377:31;;;1348:13;:26;1362:11;1348:26;;;;;;;;;;;;;;;:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;1207:208;;:::o;817:380::-;884:7;893:6;;:::i;:::-;901:4;1059:13;:26;1073:11;1059:26;;;;;;;;;;;;;;;:45;;;;;;;;;;;;1106:13;:26;1120:11;1106:26;;;;;;;;;;;;;;;:29;;1150:13;:26;1164:11;1150:26;;;;;;;;;;;;;;;:39;;;1051:139;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;817:380;;;;;:::o;1803:235::-;1991:40;;;;;;;;;2000:8;1991:40;;;;;;2010:4;1991:40;;;;2016:11;1991:40;;;;2029:1;1991:40;;;1967:9;:21;1977:10;1967:21;;;;;;;;;;;;;;;:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;1803:235;;;:::o;1494:259::-;1555:7;1564:6;;:::i;:::-;1572;;:::i;:::-;1580:4;1604:9;:19;1614:8;1604:19;;;;;;;;;;;;;;;:35;;;;;;;;;;;;1641:9;:19;1651:8;1641:19;;;;;;;;;;;;;;;:24;;1680:9;:19;1690:8;1680:19;;;;;;;;;;;;;;;:31;;1713:9;:19;1723:8;1713:19;;;;;;;;;;;;;;;:32;;;1596:150;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1494:259;;;;;:::o;63:1983::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.18;\n\n// NGO contract, for managing funds\n\ncontract NGO {\n\n    struct Beneficiary {\n        address beneficiaryAddress;\n        string id; //hashed id/passport\n        uint tokenBalance; //current token balance -- TODO consider getting from blockchain account\n    }\n\n    struct Merchant {\n        address merchantAddress; \n        string name;\n        string typeOfGoods; // colon seperated list of goods sold\n        uint tokenBalance; // number of tokens the Merchant has to redeem\n    }\n\n    mapping (address => Merchant) merchants;\n    mapping (address => Beneficiary) beneficiaries;\n    uint tokens;\n\n    // constructor to initialize number of tokens\n    function NGO(uint numberOfTokens) public {\n        tokens = numberOfTokens;\n    }\n\n    // finds and returns beneficiaries by address\n    function findBeneficiary(address beneficiary) public view returns (address, string, uint) {\n        // require(findMerchant(beneficiary).beneficiaryAddress == address(0)); \n        //0x0000000000000000000000000000000000000000\n        return (beneficiaries[beneficiary].beneficiaryAddress, beneficiaries[beneficiary].id, \n            beneficiaries[beneficiary].tokenBalance);\n    }\n    \n    function addBeneficiary(address beneficiary, string id) public {\n        // require(findBeneficiary(beneficiary)[0] == address(0)); \n        beneficiaries[beneficiary] = Beneficiary(beneficiary, id, 0);\n    }\n\n\n    // finds and returns if a Merchant exists with the provided address\n    function findMerchant(address merchant) public view returns (address, string, string, uint) {\n        return (merchants[merchant].merchantAddress, merchants[merchant].name, \n            merchants[merchant].typeOfGoods, merchants[merchant].tokenBalance);\n    }\n\n    // adds a merchant if it does not exist\n    function addMerchant(address merchant, string name, string typeOfGoods) public {\n        // require(findMerchant(merchant).merchantAddress == address(0)); \n        merchants[msg.sender] = Merchant(merchant, name, typeOfGoods, 0);\n    }\n\n    \n}\n",
   "sourcePath": "/Users/taariq/code/unlocktheblock/TruffleButter/contracts/NGO.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/Users/taariq/code/unlocktheblock/TruffleButter/contracts/NGO.sol",
       "exportedSymbols": {
         "NGO": [
-          81
+          136
         ]
       }
     },
@@ -107,25 +152,25 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            81
+            136
           ],
           "name": "NGO",
-          "scope": 82
+          "scope": 137
         },
         "children": [
           {
             "attributes": {
-              "canonicalName": "NGO.Merchant",
-              "name": "Merchant",
-              "scope": 81,
+              "canonicalName": "NGO.Beneficiary",
+              "name": "Beneficiary",
+              "scope": 136,
               "visibility": "public"
             },
             "children": [
               {
                 "attributes": {
                   "constant": false,
-                  "name": "merchantAddress",
-                  "scope": 10,
+                  "name": "beneficiaryAddress",
+                  "scope": 8,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "address",
@@ -140,18 +185,18 @@
                     },
                     "id": 2,
                     "name": "ElementaryTypeName",
-                    "src": "109:7:0"
+                    "src": "112:7:0"
                   }
                 ],
                 "id": 3,
                 "name": "VariableDeclaration",
-                "src": "109:23:0"
+                "src": "112:26:0"
               },
               {
                 "attributes": {
                   "constant": false,
-                  "name": "name",
-                  "scope": 10,
+                  "name": "id",
+                  "scope": 8,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "string storage pointer",
@@ -166,44 +211,18 @@
                     },
                     "id": 4,
                     "name": "ElementaryTypeName",
-                    "src": "143:6:0"
+                    "src": "148:6:0"
                   }
                 ],
                 "id": 5,
                 "name": "VariableDeclaration",
-                "src": "143:11:0"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "typeOfGoods",
-                  "scope": 10,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "string storage pointer",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "string",
-                      "type": "string storage pointer"
-                    },
-                    "id": 6,
-                    "name": "ElementaryTypeName",
-                    "src": "164:6:0"
-                  }
-                ],
-                "id": 7,
-                "name": "VariableDeclaration",
-                "src": "164:18:0"
+                "src": "148:9:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "tokenBalance",
-                  "scope": 10,
+                  "scope": 8,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -216,25 +235,142 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 8,
+                    "id": 6,
                     "name": "ElementaryTypeName",
-                    "src": "230:4:0"
+                    "src": "188:4:0"
                   }
                 ],
-                "id": 9,
+                "id": 7,
                 "name": "VariableDeclaration",
-                "src": "230:17:0"
+                "src": "188:17:0"
               }
             ],
-            "id": 10,
+            "id": 8,
             "name": "StructDefinition",
-            "src": "83:218:0"
+            "src": "83:202:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "NGO.Merchant",
+              "name": "Merchant",
+              "scope": 136,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "merchantAddress",
+                  "scope": 17,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 9,
+                    "name": "ElementaryTypeName",
+                    "src": "317:7:0"
+                  }
+                ],
+                "id": 10,
+                "name": "VariableDeclaration",
+                "src": "317:23:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "name",
+                  "scope": 17,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 11,
+                    "name": "ElementaryTypeName",
+                    "src": "351:6:0"
+                  }
+                ],
+                "id": 12,
+                "name": "VariableDeclaration",
+                "src": "351:11:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "typeOfGoods",
+                  "scope": 17,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 13,
+                    "name": "ElementaryTypeName",
+                    "src": "372:6:0"
+                  }
+                ],
+                "id": 14,
+                "name": "VariableDeclaration",
+                "src": "372:18:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "tokenBalance",
+                  "scope": 17,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 15,
+                    "name": "ElementaryTypeName",
+                    "src": "438:4:0"
+                  }
+                ],
+                "id": 16,
+                "name": "VariableDeclaration",
+                "src": "438:17:0"
+              }
+            ],
+            "id": 17,
+            "name": "StructDefinition",
+            "src": "291:218:0"
           },
           {
             "attributes": {
               "constant": false,
               "name": "merchants",
-              "scope": 81,
+              "scope": 136,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => struct NGO.Merchant storage ref)",
@@ -252,36 +388,83 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 11,
+                    "id": 18,
                     "name": "ElementaryTypeName",
-                    "src": "316:7:0"
+                    "src": "524:7:0"
                   },
                   {
                     "attributes": {
                       "contractScope": null,
                       "name": "Merchant",
-                      "referencedDeclaration": 10,
+                      "referencedDeclaration": 17,
                       "type": "struct NGO.Merchant storage pointer"
                     },
-                    "id": 12,
+                    "id": 19,
                     "name": "UserDefinedTypeName",
-                    "src": "327:8:0"
+                    "src": "535:8:0"
                   }
                 ],
-                "id": 13,
+                "id": 20,
                 "name": "Mapping",
-                "src": "307:29:0"
+                "src": "515:29:0"
               }
             ],
-            "id": 14,
+            "id": 21,
             "name": "VariableDeclaration",
-            "src": "307:39:0"
+            "src": "515:39:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "beneficiaries",
+              "scope": 136,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => struct NGO.Beneficiary storage ref)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => struct NGO.Beneficiary storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 22,
+                    "name": "ElementaryTypeName",
+                    "src": "569:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Beneficiary",
+                      "referencedDeclaration": 8,
+                      "type": "struct NGO.Beneficiary storage pointer"
+                    },
+                    "id": 23,
+                    "name": "UserDefinedTypeName",
+                    "src": "580:11:0"
+                  }
+                ],
+                "id": 24,
+                "name": "Mapping",
+                "src": "560:32:0"
+              }
+            ],
+            "id": 25,
+            "name": "VariableDeclaration",
+            "src": "560:46:0"
           },
           {
             "attributes": {
               "constant": false,
               "name": "tokens",
-              "scope": 81,
+              "scope": 136,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -294,14 +477,14 @@
                   "name": "uint",
                   "type": "uint256"
                 },
-                "id": 15,
+                "id": 26,
                 "name": "ElementaryTypeName",
-                "src": "352:4:0"
+                "src": "612:4:0"
               }
             ],
-            "id": 16,
+            "id": 27,
             "name": "VariableDeclaration",
-            "src": "352:11:0"
+            "src": "612:11:0"
           },
           {
             "attributes": {
@@ -313,7 +496,7 @@
               ],
               "name": "NGO",
               "payable": false,
-              "scope": 81,
+              "scope": 136,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -325,7 +508,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "numberOfTokens",
-                      "scope": 26,
+                      "scope": 37,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -338,19 +521,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 17,
+                        "id": 28,
                         "name": "ElementaryTypeName",
-                        "src": "433:4:0"
+                        "src": "693:4:0"
                       }
                     ],
-                    "id": 18,
+                    "id": 29,
                     "name": "VariableDeclaration",
-                    "src": "433:19:0"
+                    "src": "693:19:0"
                   }
                 ],
-                "id": 19,
+                "id": 30,
                 "name": "ParameterList",
-                "src": "432:21:0"
+                "src": "692:21:0"
               },
               {
                 "attributes": {
@@ -359,9 +542,9 @@
                   ]
                 },
                 "children": [],
-                "id": 20,
+                "id": 31,
                 "name": "ParameterList",
-                "src": "461:0:0"
+                "src": "721:0:0"
               },
               {
                 "children": [
@@ -384,13 +567,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 16,
+                              "referencedDeclaration": 27,
                               "type": "uint256",
                               "value": "tokens"
                             },
-                            "id": 21,
+                            "id": 32,
                             "name": "Identifier",
-                            "src": "471:6:0"
+                            "src": "731:6:0"
                           },
                           {
                             "attributes": {
@@ -398,33 +581,33 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 18,
+                              "referencedDeclaration": 29,
                               "type": "uint256",
                               "value": "numberOfTokens"
                             },
-                            "id": 22,
+                            "id": 33,
                             "name": "Identifier",
-                            "src": "480:14:0"
+                            "src": "740:14:0"
                           }
                         ],
-                        "id": 23,
+                        "id": 34,
                         "name": "Assignment",
-                        "src": "471:23:0"
+                        "src": "731:23:0"
                       }
                     ],
-                    "id": 24,
+                    "id": 35,
                     "name": "ExpressionStatement",
-                    "src": "471:23:0"
+                    "src": "731:23:0"
                   }
                 ],
-                "id": 25,
+                "id": 36,
                 "name": "Block",
-                "src": "461:40:0"
+                "src": "721:40:0"
               }
             ],
-            "id": 26,
+            "id": 37,
             "name": "FunctionDefinition",
-            "src": "420:81:0"
+            "src": "680:81:0"
           },
           {
             "attributes": {
@@ -434,9 +617,9 @@
               "modifiers": [
                 null
               ],
-              "name": "findMerchant",
+              "name": "findBeneficiary",
               "payable": false,
-              "scope": 81,
+              "scope": 136,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -447,8 +630,8 @@
                   {
                     "attributes": {
                       "constant": false,
-                      "name": "merchant",
-                      "scope": 58,
+                      "name": "beneficiary",
+                      "scope": 63,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -461,19 +644,19 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 27,
+                        "id": 38,
                         "name": "ElementaryTypeName",
-                        "src": "605:7:0"
+                        "src": "842:7:0"
                       }
                     ],
-                    "id": 28,
+                    "id": 39,
                     "name": "VariableDeclaration",
-                    "src": "605:16:0"
+                    "src": "842:19:0"
                   }
                 ],
-                "id": 29,
+                "id": 40,
                 "name": "ParameterList",
-                "src": "604:18:0"
+                "src": "841:21:0"
               },
               {
                 "children": [
@@ -481,7 +664,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 58,
+                      "scope": 63,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -494,20 +677,20 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 30,
+                        "id": 41,
                         "name": "ElementaryTypeName",
-                        "src": "644:7:0"
+                        "src": "884:7:0"
                       }
                     ],
-                    "id": 31,
+                    "id": 42,
                     "name": "VariableDeclaration",
-                    "src": "644:7:0"
+                    "src": "884:7:0"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 58,
+                      "scope": 63,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "string memory",
@@ -520,46 +703,20 @@
                           "name": "string",
                           "type": "string storage pointer"
                         },
-                        "id": 32,
+                        "id": 43,
                         "name": "ElementaryTypeName",
-                        "src": "653:6:0"
+                        "src": "893:6:0"
                       }
                     ],
-                    "id": 33,
+                    "id": 44,
                     "name": "VariableDeclaration",
-                    "src": "653:6:0"
+                    "src": "893:6:0"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 58,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 34,
-                        "name": "ElementaryTypeName",
-                        "src": "661:6:0"
-                      }
-                    ],
-                    "id": 35,
-                    "name": "VariableDeclaration",
-                    "src": "661:6:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 58,
+                      "scope": 63,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -572,25 +729,659 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 36,
+                        "id": 45,
                         "name": "ElementaryTypeName",
-                        "src": "669:4:0"
+                        "src": "901:4:0"
                       }
                     ],
-                    "id": 37,
+                    "id": 46,
                     "name": "VariableDeclaration",
-                    "src": "669:4:0"
+                    "src": "901:4:0"
                   }
                 ],
-                "id": 38,
+                "id": 47,
                 "name": "ParameterList",
-                "src": "643:31:0"
+                "src": "883:23:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 38
+                      "functionReturnParameters": 47
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(address,string storage ref,uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "beneficiaryAddress",
+                              "referencedDeclaration": 3,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct NGO.Beneficiary storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 25,
+                                      "type": "mapping(address => struct NGO.Beneficiary storage ref)",
+                                      "value": "beneficiaries"
+                                    },
+                                    "id": 48,
+                                    "name": "Identifier",
+                                    "src": "1059:13:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 39,
+                                      "type": "address",
+                                      "value": "beneficiary"
+                                    },
+                                    "id": 49,
+                                    "name": "Identifier",
+                                    "src": "1073:11:0"
+                                  }
+                                ],
+                                "id": 50,
+                                "name": "IndexAccess",
+                                "src": "1059:26:0"
+                              }
+                            ],
+                            "id": 51,
+                            "name": "MemberAccess",
+                            "src": "1059:45:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "id",
+                              "referencedDeclaration": 5,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct NGO.Beneficiary storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 25,
+                                      "type": "mapping(address => struct NGO.Beneficiary storage ref)",
+                                      "value": "beneficiaries"
+                                    },
+                                    "id": 52,
+                                    "name": "Identifier",
+                                    "src": "1106:13:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 39,
+                                      "type": "address",
+                                      "value": "beneficiary"
+                                    },
+                                    "id": 53,
+                                    "name": "Identifier",
+                                    "src": "1120:11:0"
+                                  }
+                                ],
+                                "id": 54,
+                                "name": "IndexAccess",
+                                "src": "1106:26:0"
+                              }
+                            ],
+                            "id": 55,
+                            "name": "MemberAccess",
+                            "src": "1106:29:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "tokenBalance",
+                              "referencedDeclaration": 7,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct NGO.Beneficiary storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 25,
+                                      "type": "mapping(address => struct NGO.Beneficiary storage ref)",
+                                      "value": "beneficiaries"
+                                    },
+                                    "id": 56,
+                                    "name": "Identifier",
+                                    "src": "1150:13:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 39,
+                                      "type": "address",
+                                      "value": "beneficiary"
+                                    },
+                                    "id": 57,
+                                    "name": "Identifier",
+                                    "src": "1164:11:0"
+                                  }
+                                ],
+                                "id": 58,
+                                "name": "IndexAccess",
+                                "src": "1150:26:0"
+                              }
+                            ],
+                            "id": 59,
+                            "name": "MemberAccess",
+                            "src": "1150:39:0"
+                          }
+                        ],
+                        "id": 60,
+                        "name": "TupleExpression",
+                        "src": "1058:132:0"
+                      }
+                    ],
+                    "id": 61,
+                    "name": "Return",
+                    "src": "1051:139:0"
+                  }
+                ],
+                "id": 62,
+                "name": "Block",
+                "src": "907:290:0"
+              }
+            ],
+            "id": 63,
+            "name": "FunctionDefinition",
+            "src": "817:380:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "addBeneficiary",
+              "payable": false,
+              "scope": 136,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "beneficiary",
+                      "scope": 81,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 64,
+                        "name": "ElementaryTypeName",
+                        "src": "1231:7:0"
+                      }
+                    ],
+                    "id": 65,
+                    "name": "VariableDeclaration",
+                    "src": "1231:19:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "id",
+                      "scope": 81,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 66,
+                        "name": "ElementaryTypeName",
+                        "src": "1252:6:0"
+                      }
+                    ],
+                    "id": 67,
+                    "name": "VariableDeclaration",
+                    "src": "1252:9:0"
+                  }
+                ],
+                "id": 68,
+                "name": "ParameterList",
+                "src": "1230:32:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 69,
+                "name": "ParameterList",
+                "src": "1270:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct NGO.Beneficiary storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct NGO.Beneficiary storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 25,
+                                  "type": "mapping(address => struct NGO.Beneficiary storage ref)",
+                                  "value": "beneficiaries"
+                                },
+                                "id": 70,
+                                "name": "Identifier",
+                                "src": "1348:13:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 65,
+                                  "type": "address",
+                                  "value": "beneficiary"
+                                },
+                                "id": 71,
+                                "name": "Identifier",
+                                "src": "1362:11:0"
+                              }
+                            ],
+                            "id": 72,
+                            "name": "IndexAccess",
+                            "src": "1348:26:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct NGO.Beneficiary memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 8,
+                                  "type": "type(struct NGO.Beneficiary storage pointer)",
+                                  "value": "Beneficiary"
+                                },
+                                "id": 73,
+                                "name": "Identifier",
+                                "src": "1377:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 65,
+                                  "type": "address",
+                                  "value": "beneficiary"
+                                },
+                                "id": 74,
+                                "name": "Identifier",
+                                "src": "1389:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 67,
+                                  "type": "string memory",
+                                  "value": "id"
+                                },
+                                "id": 75,
+                                "name": "Identifier",
+                                "src": "1402:2:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 76,
+                                "name": "Literal",
+                                "src": "1406:1:0"
+                              }
+                            ],
+                            "id": 77,
+                            "name": "FunctionCall",
+                            "src": "1377:31:0"
+                          }
+                        ],
+                        "id": 78,
+                        "name": "Assignment",
+                        "src": "1348:60:0"
+                      }
+                    ],
+                    "id": 79,
+                    "name": "ExpressionStatement",
+                    "src": "1348:60:0"
+                  }
+                ],
+                "id": 80,
+                "name": "Block",
+                "src": "1270:145:0"
+              }
+            ],
+            "id": 81,
+            "name": "FunctionDefinition",
+            "src": "1207:208:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "findMerchant",
+              "payable": false,
+              "scope": 136,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "merchant",
+                      "scope": 113,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 82,
+                        "name": "ElementaryTypeName",
+                        "src": "1516:7:0"
+                      }
+                    ],
+                    "id": 83,
+                    "name": "VariableDeclaration",
+                    "src": "1516:16:0"
+                  }
+                ],
+                "id": 84,
+                "name": "ParameterList",
+                "src": "1515:18:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 113,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 85,
+                        "name": "ElementaryTypeName",
+                        "src": "1555:7:0"
+                      }
+                    ],
+                    "id": 86,
+                    "name": "VariableDeclaration",
+                    "src": "1555:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 113,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 87,
+                        "name": "ElementaryTypeName",
+                        "src": "1564:6:0"
+                      }
+                    ],
+                    "id": 88,
+                    "name": "VariableDeclaration",
+                    "src": "1564:6:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 113,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 89,
+                        "name": "ElementaryTypeName",
+                        "src": "1572:6:0"
+                      }
+                    ],
+                    "id": 90,
+                    "name": "VariableDeclaration",
+                    "src": "1572:6:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 113,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 91,
+                        "name": "ElementaryTypeName",
+                        "src": "1580:4:0"
+                      }
+                    ],
+                    "id": 92,
+                    "name": "VariableDeclaration",
+                    "src": "1580:4:0"
+                  }
+                ],
+                "id": 93,
+                "name": "ParameterList",
+                "src": "1554:31:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 93
                     },
                     "children": [
                       {
@@ -612,7 +1403,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "merchantAddress",
-                              "referencedDeclaration": 3,
+                              "referencedDeclaration": 10,
                               "type": "address"
                             },
                             "children": [
@@ -632,13 +1423,13 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 14,
+                                      "referencedDeclaration": 21,
                                       "type": "mapping(address => struct NGO.Merchant storage ref)",
                                       "value": "merchants"
                                     },
-                                    "id": 39,
+                                    "id": 94,
                                     "name": "Identifier",
-                                    "src": "693:9:0"
+                                    "src": "1604:9:0"
                                   },
                                   {
                                     "attributes": {
@@ -646,23 +1437,23 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 28,
+                                      "referencedDeclaration": 83,
                                       "type": "address",
                                       "value": "merchant"
                                     },
-                                    "id": 40,
+                                    "id": 95,
                                     "name": "Identifier",
-                                    "src": "703:8:0"
+                                    "src": "1614:8:0"
                                   }
                                 ],
-                                "id": 41,
+                                "id": 96,
                                 "name": "IndexAccess",
-                                "src": "693:19:0"
+                                "src": "1604:19:0"
                               }
                             ],
-                            "id": 42,
+                            "id": 97,
                             "name": "MemberAccess",
-                            "src": "693:35:0"
+                            "src": "1604:35:0"
                           },
                           {
                             "attributes": {
@@ -672,7 +1463,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "name",
-                              "referencedDeclaration": 5,
+                              "referencedDeclaration": 12,
                               "type": "string storage ref"
                             },
                             "children": [
@@ -692,13 +1483,13 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 14,
+                                      "referencedDeclaration": 21,
                                       "type": "mapping(address => struct NGO.Merchant storage ref)",
                                       "value": "merchants"
                                     },
-                                    "id": 43,
+                                    "id": 98,
                                     "name": "Identifier",
-                                    "src": "730:9:0"
+                                    "src": "1641:9:0"
                                   },
                                   {
                                     "attributes": {
@@ -706,23 +1497,23 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 28,
+                                      "referencedDeclaration": 83,
                                       "type": "address",
                                       "value": "merchant"
                                     },
-                                    "id": 44,
+                                    "id": 99,
                                     "name": "Identifier",
-                                    "src": "740:8:0"
+                                    "src": "1651:8:0"
                                   }
                                 ],
-                                "id": 45,
+                                "id": 100,
                                 "name": "IndexAccess",
-                                "src": "730:19:0"
+                                "src": "1641:19:0"
                               }
                             ],
-                            "id": 46,
+                            "id": 101,
                             "name": "MemberAccess",
-                            "src": "730:24:0"
+                            "src": "1641:24:0"
                           },
                           {
                             "attributes": {
@@ -732,7 +1523,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "typeOfGoods",
-                              "referencedDeclaration": 7,
+                              "referencedDeclaration": 14,
                               "type": "string storage ref"
                             },
                             "children": [
@@ -752,13 +1543,13 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 14,
+                                      "referencedDeclaration": 21,
                                       "type": "mapping(address => struct NGO.Merchant storage ref)",
                                       "value": "merchants"
                                     },
-                                    "id": 47,
+                                    "id": 102,
                                     "name": "Identifier",
-                                    "src": "769:9:0"
+                                    "src": "1680:9:0"
                                   },
                                   {
                                     "attributes": {
@@ -766,23 +1557,23 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 28,
+                                      "referencedDeclaration": 83,
                                       "type": "address",
                                       "value": "merchant"
                                     },
-                                    "id": 48,
+                                    "id": 103,
                                     "name": "Identifier",
-                                    "src": "779:8:0"
+                                    "src": "1690:8:0"
                                   }
                                 ],
-                                "id": 49,
+                                "id": 104,
                                 "name": "IndexAccess",
-                                "src": "769:19:0"
+                                "src": "1680:19:0"
                               }
                             ],
-                            "id": 50,
+                            "id": 105,
                             "name": "MemberAccess",
-                            "src": "769:31:0"
+                            "src": "1680:31:0"
                           },
                           {
                             "attributes": {
@@ -792,7 +1583,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "tokenBalance",
-                              "referencedDeclaration": 9,
+                              "referencedDeclaration": 16,
                               "type": "uint256"
                             },
                             "children": [
@@ -812,13 +1603,13 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 14,
+                                      "referencedDeclaration": 21,
                                       "type": "mapping(address => struct NGO.Merchant storage ref)",
                                       "value": "merchants"
                                     },
-                                    "id": 51,
+                                    "id": 106,
                                     "name": "Identifier",
-                                    "src": "802:9:0"
+                                    "src": "1713:9:0"
                                   },
                                   {
                                     "attributes": {
@@ -826,43 +1617,43 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 28,
+                                      "referencedDeclaration": 83,
                                       "type": "address",
                                       "value": "merchant"
                                     },
-                                    "id": 52,
+                                    "id": 107,
                                     "name": "Identifier",
-                                    "src": "812:8:0"
+                                    "src": "1723:8:0"
                                   }
                                 ],
-                                "id": 53,
+                                "id": 108,
                                 "name": "IndexAccess",
-                                "src": "802:19:0"
+                                "src": "1713:19:0"
                               }
                             ],
-                            "id": 54,
+                            "id": 109,
                             "name": "MemberAccess",
-                            "src": "802:32:0"
+                            "src": "1713:32:0"
                           }
                         ],
-                        "id": 55,
+                        "id": 110,
                         "name": "TupleExpression",
-                        "src": "692:143:0"
+                        "src": "1603:143:0"
                       }
                     ],
-                    "id": 56,
+                    "id": 111,
                     "name": "Return",
-                    "src": "685:150:0"
+                    "src": "1596:150:0"
                   }
                 ],
-                "id": 57,
+                "id": 112,
                 "name": "Block",
-                "src": "675:167:0"
+                "src": "1586:167:0"
               }
             ],
-            "id": 58,
+            "id": 113,
             "name": "FunctionDefinition",
-            "src": "583:259:0"
+            "src": "1494:259:0"
           },
           {
             "attributes": {
@@ -874,7 +1665,7 @@
               ],
               "name": "addMerchant",
               "payable": false,
-              "scope": 81,
+              "scope": 136,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -886,7 +1677,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "merchant",
-                      "scope": 80,
+                      "scope": 135,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -899,20 +1690,20 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 59,
+                        "id": 114,
                         "name": "ElementaryTypeName",
-                        "src": "913:7:0"
+                        "src": "1824:7:0"
                       }
                     ],
-                    "id": 60,
+                    "id": 115,
                     "name": "VariableDeclaration",
-                    "src": "913:16:0"
+                    "src": "1824:16:0"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "name",
-                      "scope": 80,
+                      "scope": 135,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "string memory",
@@ -925,20 +1716,20 @@
                           "name": "string",
                           "type": "string storage pointer"
                         },
-                        "id": 61,
+                        "id": 116,
                         "name": "ElementaryTypeName",
-                        "src": "931:6:0"
+                        "src": "1842:6:0"
                       }
                     ],
-                    "id": 62,
+                    "id": 117,
                     "name": "VariableDeclaration",
-                    "src": "931:11:0"
+                    "src": "1842:11:0"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "typeOfGoods",
-                      "scope": 80,
+                      "scope": 135,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "string memory",
@@ -951,19 +1742,19 @@
                           "name": "string",
                           "type": "string storage pointer"
                         },
-                        "id": 63,
+                        "id": 118,
                         "name": "ElementaryTypeName",
-                        "src": "944:6:0"
+                        "src": "1855:6:0"
                       }
                     ],
-                    "id": 64,
+                    "id": 119,
                     "name": "VariableDeclaration",
-                    "src": "944:18:0"
+                    "src": "1855:18:0"
                   }
                 ],
-                "id": 65,
+                "id": 120,
                 "name": "ParameterList",
-                "src": "912:51:0"
+                "src": "1823:51:0"
               },
               {
                 "attributes": {
@@ -972,9 +1763,9 @@
                   ]
                 },
                 "children": [],
-                "id": 66,
+                "id": 121,
                 "name": "ParameterList",
-                "src": "971:0:0"
+                "src": "1882:0:0"
               },
               {
                 "children": [
@@ -1007,13 +1798,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 14,
+                                  "referencedDeclaration": 21,
                                   "type": "mapping(address => struct NGO.Merchant storage ref)",
                                   "value": "merchants"
                                 },
-                                "id": 67,
+                                "id": 122,
                                 "name": "Identifier",
-                                "src": "1056:9:0"
+                                "src": "1967:9:0"
                               },
                               {
                                 "attributes": {
@@ -1033,23 +1824,23 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 93,
+                                      "referencedDeclaration": 148,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 68,
+                                    "id": 123,
                                     "name": "Identifier",
-                                    "src": "1066:3:0"
+                                    "src": "1977:3:0"
                                   }
                                 ],
-                                "id": 69,
+                                "id": 124,
                                 "name": "MemberAccess",
-                                "src": "1066:10:0"
+                                "src": "1977:10:0"
                               }
                             ],
-                            "id": 70,
+                            "id": 125,
                             "name": "IndexAccess",
-                            "src": "1056:21:0"
+                            "src": "1967:21:0"
                           },
                           {
                             "attributes": {
@@ -1089,13 +1880,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 10,
+                                  "referencedDeclaration": 17,
                                   "type": "type(struct NGO.Merchant storage pointer)",
                                   "value": "Merchant"
                                 },
-                                "id": 71,
+                                "id": 126,
                                 "name": "Identifier",
-                                "src": "1080:8:0"
+                                "src": "1991:8:0"
                               },
                               {
                                 "attributes": {
@@ -1103,13 +1894,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 60,
+                                  "referencedDeclaration": 115,
                                   "type": "address",
                                   "value": "merchant"
                                 },
-                                "id": 72,
+                                "id": 127,
                                 "name": "Identifier",
-                                "src": "1089:8:0"
+                                "src": "2000:8:0"
                               },
                               {
                                 "attributes": {
@@ -1117,13 +1908,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 62,
+                                  "referencedDeclaration": 117,
                                   "type": "string memory",
                                   "value": "name"
                                 },
-                                "id": 73,
+                                "id": 128,
                                 "name": "Identifier",
-                                "src": "1099:4:0"
+                                "src": "2010:4:0"
                               },
                               {
                                 "attributes": {
@@ -1131,13 +1922,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 64,
+                                  "referencedDeclaration": 119,
                                   "type": "string memory",
                                   "value": "typeOfGoods"
                                 },
-                                "id": 74,
+                                "id": 129,
                                 "name": "Identifier",
-                                "src": "1105:11:0"
+                                "src": "2016:11:0"
                               },
                               {
                                 "attributes": {
@@ -1152,44 +1943,44 @@
                                   "type": "int_const 0",
                                   "value": "0"
                                 },
-                                "id": 75,
+                                "id": 130,
                                 "name": "Literal",
-                                "src": "1118:1:0"
+                                "src": "2029:1:0"
                               }
                             ],
-                            "id": 76,
+                            "id": 131,
                             "name": "FunctionCall",
-                            "src": "1080:40:0"
+                            "src": "1991:40:0"
                           }
                         ],
-                        "id": 77,
+                        "id": 132,
                         "name": "Assignment",
-                        "src": "1056:64:0"
+                        "src": "1967:64:0"
                       }
                     ],
-                    "id": 78,
+                    "id": 133,
                     "name": "ExpressionStatement",
-                    "src": "1056:64:0"
+                    "src": "1967:64:0"
                   }
                 ],
-                "id": 79,
+                "id": 134,
                 "name": "Block",
-                "src": "971:156:0"
+                "src": "1882:156:0"
               }
             ],
-            "id": 80,
+            "id": 135,
             "name": "FunctionDefinition",
-            "src": "892:235:0"
+            "src": "1803:235:0"
           }
         ],
-        "id": 81,
+        "id": 136,
         "name": "ContractDefinition",
-        "src": "63:1072:0"
+        "src": "63:1983:0"
       }
     ],
-    "id": 82,
+    "id": 137,
     "name": "SourceUnit",
-    "src": "0:1136:0"
+    "src": "0:2047:0"
   },
   "compiler": {
     "name": "solc",
@@ -1199,7 +1990,7 @@
     "4447": {
       "events": {},
       "links": {},
-      "address": "0x8065f4c7b8c2bf53561af92d9da2ea022a0b28ca"
+      "address": "0xe134eee40a4a313a413e9b1da94bb5d01b79f433"
     },
     "5777": {
       "events": {},
@@ -1208,5 +1999,5 @@
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-29T12:34:47.316Z"
+  "updatedAt": "2018-01-29T12:57:51.431Z"
 }
