@@ -4,11 +4,11 @@ const assertRevert = require('./helpers/assertRevert')
 
 contract('NGO', function (accounts) {
     let ngo = null;
-    before(async () => {
+    beforeEach(async () => {
         ngo = await NGO.new(100000);
     })
 
-    describe('Testing Merchants, ', () => {
+    describe('Testing Merchants', () => {
         it('should add a valid merchant', async () => {
             await ngo.addMerchant("0x627306090abaB3A6e1400e9345bC60c78a8BEf57", "BobSupplier", "Water;Apples;rice");
             const merchant = await ngo.findMerchant("0x627306090abaB3A6e1400e9345bC60c78a8BEf57"); 
@@ -31,8 +31,9 @@ contract('NGO', function (accounts) {
     });
 
     describe('Testing Merchants', () => {
-        it('should revert if not a duplicate merchant', async () => {
+        it('should revert if a duplicate merchant', async () => {
             await ngo.addMerchant("0x627306090abaB3A6e1400e9345bC60c78a8BEf57", "BobSupplier", "Water;Apples;rice");
+            await assertRevert(ngo.addMerchant("0x627306090abaB3A6e1400e9345bC60c78a8BEf57", "BobSupplier", "Water;Apples;rice"));
             const merchant = await ngo.findMerchant("0x627306090abaB3A6e1400e9345bC60c78a8BEf57");
             assert.equal(merchant[0], "0x627306090abaB3A6e1400e9345bC60c78a8BEf57".toLowerCase(), "address does not match of added merchant");
             assert.equal(merchant[1], "BobSupplier", "type of goods does not match of added merchant");

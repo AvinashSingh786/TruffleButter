@@ -1,10 +1,8 @@
 var NGO = artifacts.require("./NGO.sol");
 const assertRevert = require('./helpers/assertRevert')
 
-
 contract('NGO', function (accounts) {
     
-
     it("should add a beneficiary", function () {
         return NGO.deployed().then(function (instance) {
             instance.addBeneficiary("0xf17f52151EbEF6C7334FAD080c5704D77216b732", "passport1");
