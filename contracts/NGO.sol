@@ -50,5 +50,11 @@ contract NGO {
         merchants[msg.sender] = Merchant(merchant, name, typeOfGoods, 0);
     }
 
+    //
+    function removeMerchant(address merchant) public {
+        var (m,,,) = findMerchant(merchant);
+        require(m != address(0)); 
+        delete merchants[msg.sender];
+    }
     
 }
