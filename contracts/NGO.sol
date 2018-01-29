@@ -36,6 +36,12 @@ contract NGO {
         require(beneficiaries[beneficiary].beneficiaryAddress == address(0)); 
         beneficiaries[beneficiary] = Beneficiary(beneficiary, id, 0);
     }
+    
+    function removeBeneficiary(address beneficiary) public {
+        var (b,,) = findBeneficiary(beneficiary);
+        require(b != address(0)); 
+        delete beneficiaries[beneficiary];
+    }
 
     // finds and returns if a Merchant exists with the provided address
     function findMerchant(address merchant) public view returns (address, string, string, uint) {
