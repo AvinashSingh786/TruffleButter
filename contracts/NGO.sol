@@ -2,8 +2,11 @@ pragma solidity ^0.4.18;
 
 // NGO contract, for managing funds
 
+import "./Math/SafeMath.sol";
+
 contract NGO {
 
+    using SafeMath for uint; // prevents underflow/overflow problem
     struct Beneficiary {
         address beneficiaryAddress;
         string id; //hashed id/passport
@@ -62,5 +65,6 @@ contract NGO {
         require(m != address(0)); 
         delete merchants[msg.sender];
     }
+
     
 }
