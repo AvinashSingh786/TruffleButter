@@ -15,7 +15,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
-        let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
+        // let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
+
+                    // hardcode a few admins
+        let users: any[] = [{"id": 1, "username": "admin", "firstName": "admin", "lastName": "", "password": "a", "token": "fake-jwt-token"},
+        {"id": 2, "username": "taariq", "firstName": "taariq", "lastName": "", "password": "t", "token": "fake-jwt-token"},
+        {"id": 3, "username": "prince", "firstName": "prince", "lastName": "", "password": "p", "token": "fake-jwt-token"},
+        {"id": 4, "username": "avinash", "firstName": "avinash", "lastName": "", "password": "a", "token": "fake-jwt-token"},
+        {"id": 5, "username": "jp", "firstName": "jp", "lastName": "", "password": "j", "token": "fake-jwt-token"},
+        {"id": 6, "username": "marius", "firstName": "marius", "lastName": "", "password": "m", "token": "fake-jwt-token"}];
 
         // wrap in delayed observable to simulate server api call
         return Observable.of(null).mergeMap(() => {
