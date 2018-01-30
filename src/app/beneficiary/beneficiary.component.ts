@@ -12,14 +12,14 @@ export class BeneficiaryComponent implements OnInit {
     loading = false;
     returnUrl: string;
     loggedin = false;
-    balance = 0;
+    balance = "0";
     constructor(
         private route: ActivatedRoute,
         private router: Router, private web3Service: Web3Service) {
         if (localStorage.getItem('currentUser')) {
             // logged in so return true
             this.loggedin = true;
-
+     
         }
         else {
             this.loggedin = false;
@@ -32,8 +32,14 @@ export class BeneficiaryComponent implements OnInit {
     }
 
     async getBalance() {
-        this.loading = true;
-        this.balance = await this.web3Service.web3.eth.getBalance(this.model.address);
-        this.loading = false;
+        try {
+            this.loading = true;
+            this.balance = await this.web3Service.web3.eth.getBalance(this.model.address);
+            this.loading = false;
+        } catch (err) {
+            this.loading = false;
+            this.balance = "Error: invalid address entered";
+        }
+
     }
 }

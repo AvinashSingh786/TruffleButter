@@ -64,7 +64,8 @@ body {margin:0;}
 }
 
 .login {
-  background-color: rgba(255,255,250, 0.5)
+  background-color: rgba(255,255,250, 0.5);
+  padding: 10px;
 }
 
 h2 {
@@ -82,4 +83,12 @@ h2 {
     border: 0;
     padding-top: 20px;
     background-color: transparent;
+}
+
+.balance {
+  font-size: larger;
+  color: green;
+  text-align: center;
+  margin: 0 auto;
+  
 }
