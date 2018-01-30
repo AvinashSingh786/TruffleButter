@@ -75,3 +75,11 @@ h2 {
 }
 
 #qr-canvas { display: none; }
+
+.qr {
+    font-size: larger;
+    padding: 0;
+    border: 0;
+    padding-top: 20px;
+    background-color: transparent;
+}

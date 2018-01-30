@@ -30,4 +30,9 @@ export class BeneficiaryComponent implements OnInit {
     ngOnInit() {
         // reset login status
     }
+
+    getBalance() {
+        alert();
+        this.loading = true;
+    }
 }

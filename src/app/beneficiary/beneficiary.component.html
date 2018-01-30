@@ -42,19 +42,26 @@
     </div>
     <!-- <a href="javascript:void(0);" style="font-size:15px;" class="icon" (click)="myFunction()">&#9776;</a> -->
 </nav>
- 
+
 <div class="col-md-6 col-md-offset-3 login">
     <h2>View Beneficiary Balance</h2>
-    <form name="form"  #f="ngForm" novalidate>
+    <form name="form"  (ngSubmit)="f.form.valid && getBalance()" #f="ngForm" novalidate>
         <div class="form-group input-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
             <label for="firstName">Wallet Address</label>
             <input type="text" aria-describedby="basic-addon2" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
-            <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
-            <span class="input-group-addon" id="basic-addon2"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <div *ngIf="f.submitted && !firstName.valid" class="help-block">Wallet Address is required</div>
+            <span class="input-group-addon qr" id="basic-addon2"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 <i class="fa fa-qrcode" aria-hidden="true"></i>
             </button></span>
+        
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" style="margin: 0 auto;" class="btn btn-primary text-center">Get Balance <i class="fa fa-money" aria-hidden="true"></i></button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+            />
         </div>
     </form>
+
 </div>
 <!-- <script src="/assets/bc-qr-reader.js"></script>>
 <bc-qr-reader active="cameraRequested" on-result="processURLfromQR" on-error="onError" camera-status="cameraIsOn"></bc-qr-reader> -->
