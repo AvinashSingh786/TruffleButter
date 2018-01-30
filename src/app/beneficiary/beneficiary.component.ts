@@ -32,7 +32,7 @@ export class BeneficiaryComponent implements OnInit {
     }
 
     getBalance() {
-        alert();
+        alert(this.model.address);
         this.loading = true;
     }
 }
