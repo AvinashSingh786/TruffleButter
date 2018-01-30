@@ -16,7 +16,7 @@ import { AlertService, AuthenticationService, UserService, Web3Service } from '.
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
-import { GDOComponent } from 'app/gdo/gdo.component';
+import { BankComponent } from 'app/bank/bank.component';
 import { NGOComponent } from 'app/ngo/ngo.component';
 import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
 // import { QrScannerModule } from 'angular2-qrscanner';
@@ -36,7 +36,7 @@ import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent, 
-    GDOComponent,
+    BankComponent,
     NGOComponent,
     BeneficiaryComponent,
     // // WebCamComponent,
