@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { QrScannerModule } from 'angular2-qrscanner';
-
+import { Web3Service } from '../_services/index'
 @Component({
     moduleId: module.id.toString(),
     templateUrl: 'beneficiary.component.html'
@@ -12,10 +12,10 @@ export class BeneficiaryComponent implements OnInit {
     loading = false;
     returnUrl: string;
     loggedin = false;
-
+    balance = 0;
     constructor(
         private route: ActivatedRoute,
-        private router: Router) {
+        private router: Router, private web3Service: Web3Service) {
         if (localStorage.getItem('currentUser')) {
             // logged in so return true
             this.loggedin = true;
@@ -34,5 +34,9 @@ export class BeneficiaryComponent implements OnInit {
     getBalance() {
         alert(this.model.address);
         this.loading = true;
+        this.web3Service.web3.eth.getBalance(this.model.address).then(function(b) {
+            // alert(b);
+            this.loading = false;
+        });
     }
 }
