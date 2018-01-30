@@ -9,7 +9,10 @@ import { AlertService, UserService } from '../_services/index';
 })
 
 export class RegisterComponent {
-    model: any = {};
+    addBeneficiary: any = {};
+    removeBeneficiary: any = {};
+    addMerchant: any = {};
+    removeMerchant: any = {};
     loading = false;
     loggedin = false;
 
@@ -30,15 +33,15 @@ export class RegisterComponent {
 
     register() {
         this.loading = true;
-        this.userService.create(this.model)
-            .subscribe(
-                data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
+        // this.userService.create(this.model)
+        //     .subscribe(
+        //         data => {
+        //             this.alertService.success('Registration successful', true);
+        //             this.router.navigate(['/login']);
+        //         },
+        //         error => {
+        //             this.alertService.error(error);
+        //             this.loading = false;
+        //         });
     }
 }
