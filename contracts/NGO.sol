@@ -7,6 +7,7 @@ import "./Math/SafeMath.sol";
 contract NGO {
 
     using SafeMath for uint; // prevents underflow/overflow problem
+
     struct Beneficiary {
         address beneficiaryAddress;
         string id; //hashed id/passport
@@ -20,12 +21,21 @@ contract NGO {
         uint tokenBalance; // number of tokens the Merchant has to redeem
     }
 
+    struct GDO {
+        address gdoAddress;
+        string name;
+        uint donateableFunds;
+    }
+
     mapping (address => Merchant) merchants;
     mapping (address => Beneficiary) beneficiaries;
+    mapping (address => GDO) gdos;
+    uint ngoFunds;
     uint tokens;
 
     // constructor to initialize number of tokens
-    function NGO(uint numberOfTokens) public {
+    function NGO(uint numberOfTokens, uint funds) public {
+        ngoFunds = funds;
         tokens = numberOfTokens;
     }
 
@@ -66,5 +76,23 @@ contract NGO {
         delete merchants[msg.sender];
     }
 
-    
+    // adds a gdo if it does not exist
+    function addGDO(address gdo, string name, uint funds) public {
+        require(gdos[gdo].gdoAddress == address(0)); 
+        gdos[gdo] = GDO(gdo, name, funds);
+    }
+
+    // finds and returns if a gdo exists with the provided address
+    function findGDO(address gdo) public view returns (address, string, uint) {
+        return (gdos[gdo].gdoAddress, gdos[gdo].name, 
+            gdos[gdo].donateableFunds);
+    }
+
+    // sends funds from gdo to ngo
+    function fundNGO (address gdo, uint ammount) public{
+        if(ammount <= gdos[gdo].donateableFunds){
+            gdos[gdo].donateableFunds -= ammount;
+            ngoFunds += ammount;
+        }
+    }   
 }
