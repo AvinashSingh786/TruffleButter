@@ -31,12 +31,9 @@ export class BeneficiaryComponent implements OnInit {
         // reset login status
     }
 
-    getBalance() {
-        alert(this.model.address);
+    async getBalance() {
         this.loading = true;
-        this.web3Service.web3.eth.getBalance(this.model.address).then(function(b) {
-            // alert(b);
-            this.loading = false;
-        });
+        this.balance = await this.web3Service.web3.eth.getBalance(this.model.address);
+        this.loading = false;
     }
 }
