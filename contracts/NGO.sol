@@ -6,7 +6,7 @@ import "./Math/SafeMath.sol";
 
 contract NGO {
 
-    using SafeMath for uint;
+    using SafeMath for uint; // prevents underflow/overflow problem
     struct Beneficiary {
         address beneficiaryAddress;
         string id; //hashed id/passport
