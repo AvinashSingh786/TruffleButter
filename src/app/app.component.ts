@@ -1,7 +1,7 @@
 import { Component, HostListener, NgZone } from '@angular/core';
 const Web3 = require('web3');
 const contract = require('truffle-contract');
-const metaincoinArtifacts = require('../../build/contracts/MetaCoin.json');
+
 import { canBeNumber } from '../util/validation';
 
 declare var window: any;
@@ -11,21 +11,22 @@ declare var window: any;
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  MetaCoin = contract(metaincoinArtifacts);
+  // MetaCoin = contract(metaincoinArtifacts);
 
   // TODO add proper types these variables
   account: any;
   accounts: any;
   web3: any;
+  loggedin: boolean;
 
   balance: number;
   sendingAmount: number;
   recipientAddress: string;
   status: string;
   canBeNumber = canBeNumber;
-
+  
   constructor(private _ngZone: NgZone) {
-
+    this.loggedin = false;
   }
 
   @HostListener('window:load')
@@ -44,88 +45,95 @@ export class AppComponent {
       this.web3 = new Web3(window.web3.currentProvider);
     } else {
       console.warn(
-        'No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it\'s inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask'
+        'No web3 detected. Falling back to http://localhost:7545. You should remove this fallback when you deploy live, as it\'s inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask'
       );
       // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
       this.web3 = new Web3(
-        new Web3.providers.HttpProvider('http://localhost:8545')
+        new Web3.providers.HttpProvider('http://localhost:7545')
       );
     }
   };
 
+
   onReady = () => {
+    if (localStorage.getItem('currentUser')) {
+      this.loggedin = true;
+    } else {
+
+      this.loggedin = false;
+    }
     // Bootstrap the MetaCoin abstraction for Use.
-    this.MetaCoin.setProvider(this.web3.currentProvider);
+  //   this.MetaCoin.setProvider(this.web3.currentProvider);
 
-    // Get the initial account balance so it can be displayed.
-    this.web3.eth.getAccounts((err, accs) => {
-      if (err != null) {
-        alert('There was an error fetching your accounts.');
-        return;
-      }
+  //   // Get the initial account balance so it can be displayed.
+  //   this.web3.eth.getAccounts((err, accs) => {
+  //     if (err != null) {
+  //       alert('There was an error fetching your accounts.');
+  //       return;
+  //     }
 
-      if (accs.length === 0) {
-        alert(
-          'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
-        );
-        return;
-      }
-      this.accounts = accs;
-      this.account = this.accounts[0];
+  //     if (accs.length === 0) {
+  //       alert(
+  //         'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
+  //       );
+  //       return;
+  //     }
+  //     this.accounts = accs;
+  //     this.account = this.accounts[0];
 
-      // This is run from window:load and ZoneJS is not aware of it we
-      // need to use _ngZone.run() so that the UI updates on promise resolution
-      this._ngZone.run(() =>
-        this.refreshBalance()
-      );
-    });
-  };
+  //     // This is run from window:load and ZoneJS is not aware of it we
+  //     // need to use _ngZone.run() so that the UI updates on promise resolution
+  //     this._ngZone.run(() =>
+  //       this.refreshBalance()
+  //     );
+  //   });
+  // };
 
-  refreshBalance = () => {
-    let meta;
-    this.MetaCoin
-      .deployed()
-      .then(instance => {
-        meta = instance;
-        return meta.getBalance.call(this.account, {
-          from: this.account
-        });
-      })
-      .then(value => {
-        this.balance = value;
-      })
-      .catch(e => {
-        console.log(e);
-        this.setStatus('Error getting balance; see log.');
-      });
-  };
+  // refreshBalance = () => {
+  //   let meta;
+  //   this.MetaCoin
+  //     .deployed()
+  //     .then(instance => {
+  //       meta = instance;
+  //       return meta.getBalance.call(this.account, {
+  //         from: this.account
+  //       });
+  //     })
+  //     .then(value => {
+  //       this.balance = value;
+  //     })
+  //     .catch(e => {
+  //       console.log(e);
+  //       this.setStatus('Error getting balance; see log.');
+  //     });
+  // };
 
-  setStatus = message => {
-    this.status = message;
-  };
+  // setStatus = message => {
+  //   this.status = message;
+  // };
 
-  sendCoin = () => {
-    const amount = this.sendingAmount;
-    const receiver = this.recipientAddress;
-    let meta;
+  // sendCoin = () => {
+  //   const amount = this.sendingAmount;
+  //   const receiver = this.recipientAddress;
+  //   let meta;
 
-    this.setStatus('Initiating transaction... (please wait)');
+  //   this.setStatus('Initiating transaction... (please wait)');
 
-    this.MetaCoin
-      .deployed()
-      .then(instance => {
-        meta = instance;
-        return meta.sendCoin(receiver, amount, {
-          from: this.account
-        });
-      })
-      .then(() => {
-        this.setStatus('Transaction complete!');
-        this.refreshBalance();
-      })
-      .catch(e => {
-        console.log(e);
-        this.setStatus('Error sending coin; see log.');
-      });
+  //   this.MetaCoin
+  //     .deployed()
+  //     .then(instance => {
+  //       meta = instance;
+  //       return meta.sendCoin(receiver, amount, {
+  //         from: this.account
+  //       });
+  //     })
+  //     .then(() => {
+  //       this.setStatus('Transaction complete!');
+  //       this.refreshBalance();
+  //     })
+  //     .catch(e => {
+  //       console.log(e);
+  //       this.setStatus('Error sending coin; see log.');
+  //     });
   };
 }
