@@ -20,10 +20,14 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angular2-qrscanner": "^0.1.12",
+    "bc-qr-reader": "github:blockchain/bc-qr-reader",
     "core-js": "^2.4.1",
+    "ng2-qrcode-reader": "0.0.1",
+    "ng2-webcam": "^1.2.4",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4",
-    "web3": "^0.18.4"
+    "web3": "^1.0.0-beta.29",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@angular/cli": "^1.3.0",
@@ -63,7 +67,6 @@
     "ts-node": "^3.0.2",
     "tslint": "~5.6.0",
     "typescript": "~2.4.2",
-    "web3": "^0.19.0",
     "webpack": "^3.5.2",
     "webpack-dev-server": "^2.3.0"
   }
