@@ -11,11 +11,22 @@ import { AlertService, UserService } from '../_services/index';
 export class RegisterComponent {
     model: any = {};
     loading = false;
+    loggedin = false;
 
     constructor(
         private router: Router,
         private userService: UserService,
-        private alertService: AlertService) { }
+        private alertService: AlertService) {
+        if (localStorage.getItem('currentUser')) {
+            // logged in so return true
+            this.loggedin = true;
+
+        }
+        else {
+            this.loggedin = false;
+            this.router.navigate(['/login']);
+        }
+         }
 
     register() {
         this.loading = true;

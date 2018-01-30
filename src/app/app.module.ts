@@ -19,6 +19,9 @@ import { RegisterComponent } from './register/index';
 import { GDOComponent } from 'app/gdo/gdo.component';
 import { NGOComponent } from 'app/ngo/ngo.component';
 import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
+// import { QrScannerModule } from 'angular2-qrscanner';
+// import {WebCamComponent} from 'ng2-webcam';
+ 
 
 @NgModule({
   imports: [
@@ -35,8 +38,10 @@ import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
     RegisterComponent, 
     GDOComponent,
     NGOComponent,
-    BeneficiaryComponent
-
+    BeneficiaryComponent,
+    // // WebCamComponent,
+    // QrScannerModule
+ 
   ],
   providers: [
     AuthGuard,

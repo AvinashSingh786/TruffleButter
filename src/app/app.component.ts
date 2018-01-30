@@ -17,15 +17,16 @@ export class AppComponent {
   account: any;
   accounts: any;
   web3: any;
+  loggedin: boolean;
 
   balance: number;
   sendingAmount: number;
   recipientAddress: string;
   status: string;
   canBeNumber = canBeNumber;
-
+  
   constructor(private _ngZone: NgZone) {
-
+    this.loggedin = false;
   }
 
   @HostListener('window:load')
@@ -53,7 +54,14 @@ export class AppComponent {
     }
   };
 
+
   onReady = () => {
+    if (localStorage.getItem('currentUser')) {
+      this.loggedin = true;
+    } else {
+
+      this.loggedin = false;
+    }
     // Bootstrap the MetaCoin abstraction for Use.
   //   this.MetaCoin.setProvider(this.web3.currentProvider);
 

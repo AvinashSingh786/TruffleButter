@@ -12,12 +12,21 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrl: string;
-
+    loggedin = false;
     constructor(
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService) { }
+        private alertService: AlertService) {
+            if (localStorage.getItem('currentUser')) {
+                // logged in so return true
+                this.loggedin = true;
+                this.router.navigate(['/home']);
+            }
+            else {
+                this.loggedin = false;
+            }
+        }
 
     ngOnInit() {
         // reset login status

@@ -10,7 +10,7 @@ import { NGOComponent } from './ngo/ngo.component';
 import { AuthGuard } from './_guards/index';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'gdo', component: GDOComponent },
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     { path: 'beneficiary', component: BeneficiaryComponent },
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'home' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

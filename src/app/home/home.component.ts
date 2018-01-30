@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
 
@@ -11,9 +11,19 @@ import { UserService } from '../_services/index';
 export class HomeComponent implements OnInit {
     currentUser: User;
     users: User[] = [];
+    loggedin = false;
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private router: Router) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (localStorage.getItem('currentUser')) {
+            // logged in so return true
+            this.loggedin = true;
+
+        }
+        else {
+            this.loggedin = false;
+            this.router.navigate(['/login']);
+        }
     }
 
     ngOnInit() {
@@ -27,4 +37,7 @@ export class HomeComponent implements OnInit {
     private loadAllUsers() {
         this.userService.getAll().subscribe(users => { this.users = users; });
     }
+
+
+ 
 }
