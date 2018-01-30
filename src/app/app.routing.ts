@@ -14,7 +14,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
     { path: 'gdo', component: GDOComponent, canActivate: [AuthGuard] },
-    { path: 'ngo', component: NGOComponent, canActivate: [AuthGuard] },
+    { path: 'ngo', component: NGOComponent, canActivate: [AuthGuard]     },
     { path: 'beneficiary', component: BeneficiaryComponent },
 
     // otherwise redirect to home
