@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/index';
 import { BeneficiaryComponent } from './beneficiary/beneficiary.component';
 import { BankComponent } from './bank/bank.component';
 import { NGOComponent } from './ngo/ngo.component';
-import { GDOComponent } from '/gdo/gdo.component';
+import { GDOComponent } from './gdo/gdo.component';
 import { AuthGuard } from './_guards/index';
 
 const appRoutes: Routes = [
