@@ -1,15 +1,15 @@
 {
   "contractName": "SafeMath",
   "abi": [],
-  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a7230582049f27ec8263df93467b540b2c66595d7b74369b82d386f31ec94cc13cf8b556f0029",
-  "deployedBytecode": "0x6060604052600080fd00a165627a7a7230582049f27ec8263df93467b540b2c66595d7b74369b82d386f31ec94cc13cf8b556f0029",
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820802da080d3401a562ec4a5d2ea243748d138e1f4183d4cc212742eecfb1d74cb0029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820802da080d3401a562ec4a5d2ea243748d138e1f4183d4cc212742eecfb1d74cb0029",
   "sourceMap": "117:1022:1:-;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "117:1022:1:-;;;;;",
   "source": "pragma solidity ^0.4.18;\n\n\n/**\n * @title SafeMath\n * @dev Math operations with safety checks that throw on error\n */\nlibrary SafeMath {\n\n  /**\n  * @dev Multiplies two numbers, throws on overflow.\n  */\n  function mul(uint256 a, uint256 b) internal pure returns (uint256) {\n    if (a == 0) {\n      return 0;\n    }\n    uint256 c = a * b;\n    assert(c / a == b);\n    return c;\n  }\n\n  /**\n  * @dev Integer division of two numbers, truncating the quotient.\n  */\n  function div(uint256 a, uint256 b) internal pure returns (uint256) {\n    // assert(b > 0); // Solidity automatically throws when dividing by 0\n    uint256 c = a / b;\n    // assert(a == b * c + a % b); // There is no case in which this doesn't hold\n    return c;\n  }\n\n  /**\n  * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).\n  */\n  function sub(uint256 a, uint256 b) internal pure returns (uint256) {\n    assert(b <= a);\n    return a - b;\n  }\n\n  /**\n  * @dev Adds two numbers, throws on overflow.\n  */\n  function add(uint256 a, uint256 b) internal pure returns (uint256) {\n    uint256 c = a + b;\n    assert(c >= a);\n    return c;\n  }\n}\n",
-  "sourcePath": "/home/jp/TruffleButter/contracts/Math/SafeMath.sol",
+  "sourcePath": "/home/avinash/Desktop/TruffleButter/contracts/Math/SafeMath.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/home/jp/TruffleButter/contracts/Math/SafeMath.sol",
+      "absolutePath": "/home/avinash/Desktop/TruffleButter/contracts/Math/SafeMath.sol",
       "exportedSymbols": {
         "SafeMath": [
           209
@@ -367,7 +367,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 212,
+                              "referencedDeclaration": 586,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -869,7 +869,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 212,
+                              "referencedDeclaration": 586,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -1227,7 +1227,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 212,
+                              "referencedDeclaration": 586,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -1343,5 +1343,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-30T12:48:39.803Z"
+  "updatedAt": "2018-01-31T05:05:29.736Z"
 }
