@@ -30,6 +30,10 @@ truffle migrate
 
 npm install
 
+- Run dapp
+
+ng serve
+
 - Test in browser
 
 http://localhost:4000/
