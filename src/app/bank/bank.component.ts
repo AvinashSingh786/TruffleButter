@@ -26,6 +26,20 @@ export class BankComponent implements OnInit {
     returnUrl: string;
     loggedin = false;
 
+    public scatterChartLabels: string[] = ['BEN'];
+
+    public scatterChartData: any[] = [[{
+          x: -10,
+          y: 0
+        }, {
+          x: 0,
+          y: 10
+        }, {
+          x: 10,
+          y: 5
+        }]];
+    public scatterChartType: string = 'scatter';
+
     constructor(
         private route: ActivatedRoute,
         private router: Router) {
@@ -66,12 +80,32 @@ export class BankComponent implements OnInit {
             new Web3.providers.HttpProvider('http://localhost:7545')
           );
         }
-      };
+      this.SIFContract.setProvider(this.web3.currentProvider);
+    // watch for an event with {some: ‘args’}
+        this.SIFContract
+          .deployed()
+          .then(instance => {
+            const sif = instance;
+            const transferEvent = sif.Transfer({ fromBlock: 0, toBlock: 'latest' });
+            transferEvent.watch(function (error, result) {
+              console.log(result);
+              alert("T");
+            });
+
+            const mintEvent = sif.Mint({ fromBlock: 0, toBlock: 'latest' });
+            mintEvent.watch(function (error, result) {
+              console.log(result);
+              alert("M");
+            });
+          }).catch(e => {
+            console.log(e);
+          });
+      }
 
     onReady = () => {
         // Bootstrap the MetaCoin abstraction for Use.
         // this.BankContract.setProvider(this.web3.currentProvider);
-        this.SIFContract.setProvider(this.web3.currentProvider);
+        // this.SIFContract.setProvider(this.web3.currentProvider);
     
         // Get the initial account balance so it can be displayed.
         // this.web3.eth.getAccounts((err, accs) => {
@@ -141,7 +175,7 @@ export class BankComponent implements OnInit {
             console.log("Sending tokens to NGO " + this.model.ngo[0]);
             console.log(window.web3);
             console.log(this.web3);
-            sif.mint(window.web3.eth.accounts[0], this.model.tokens, { from: window.web3.eth.accounts[0], contractAddress: "0xf17f52151EbEF6C7334FAD080c5704D77216b732"}).then(result => {
+            sif.mint(this.web3.eth.accounts[0], this.model.tokens, { from: this.web3.eth.accounts[0], contractAddress: "0xf17f52151EbEF6C7334FAD080c5704D77216b732"}).then(result => {
 
               console.log(result);
               console.log("after");
@@ -173,5 +207,7 @@ export class BankComponent implements OnInit {
       // }
       this.loading = false;
     }
+
+    
 }
 

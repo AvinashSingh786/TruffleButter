@@ -26,9 +26,23 @@ export class GDOComponent implements OnInit {
     public barChartData: any[] = [350, 750, 400];
     public barChartType: string = 'bar';
 
-    public scatterChartLabels: string[] = ['Grains', 'Vegetables', 'Oils', 'Meat', 'Water'];
-    public scatterChartData: any[] = [850, 450, 200, 1000, 500];
-    public scatterChartType: string = 'radar';
+    public radarChartLabels: string[] = ['Grains', 'Vegetables', 'Oils', 'Meat', 'Water'];
+    public radarChartData: any[] = [850, 450, 200, 1000, 500];
+    public radarChartType: string = 'radar';
+
+    public scatterChartLabels: string[] = ['BEN'];
+    
+    public scatterChartData: any[] = [[{
+        x: -10,
+        y: 0
+    }, {
+        x: 0,
+        y: 10
+    }, {
+        x: 10,
+        y: 5
+    }]];
+    public scatterChartType: string = 'scatter';
 
     constructor(
         private route: ActivatedRoute,
@@ -46,6 +60,23 @@ export class GDOComponent implements OnInit {
     
     ngOnInit() {
         // reset login status
+        // var MyContract = web3.eth.contract(abi);
+        // var myContractInstance = MyContract.at(' 0x78e97bcc5b5dd9ed228fed7a4887c0d7287344a9');
+
+        // // watch for an event with {some: ‘args’}
+        // var myEvent = myContractInstance.MyEvent({ some: ‘args’ }, { fromBlock: 0, toBlock: ‘latest’ });
+        // myEvent.watch(function (error, result) {
+        
+        // });
+
+        // // would get all past logs again.
+        // var myResults = myEvent.get(function (error, logs) {  });
+
+        // ...
+
+        // // would stop and uninstall the filter
+        // myEvent.stopWatching();
+
  
     }
 
