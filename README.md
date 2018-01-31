@@ -36,5 +36,5 @@ ng serve
 
 - Test in browser
 
-http://localhost:4000/
+http://localhost:4200/
 
