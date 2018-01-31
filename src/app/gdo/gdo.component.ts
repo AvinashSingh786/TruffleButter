@@ -23,7 +23,7 @@ export class GDOComponent implements OnInit {
     public doughnutChartType: string = 'doughnut';
 
     public barChartLabels: string[] = ['Merchant1', 'Merchant2', 'Merchant3'];
-    public barChartData: any[] = [350, 450, 100, 200];
+    public barChartData: any[] = [350, 750, 400];
     public barChartType: string = 'bar';
 
     public scatterChartLabels: string[] = ['Grains', 'Vegetables', 'Oils', 'Meat', 'Water'];
