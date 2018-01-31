@@ -6,7 +6,7 @@ contract('SifCoin', function (accounts) {
         sifCoin = await SifCoin.new();
     })
 
-    //smoke tests
+    //smoke tests, just making sure our contract works
     describe('Testing SifCoin', () => {
 
         it("should be called sifCoin", async () => {
