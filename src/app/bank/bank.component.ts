@@ -137,13 +137,22 @@ export class BankComponent implements OnInit {
           .deployed()
           .then(instance => {
             sif = instance;
+            console.log(sif);
             console.log("Sending tokens to NGO " + this.model.ngo[0]);
             console.log(window.web3);
             console.log(this.web3);
-            sif.mint(this.model.ngo[0], this.model.tokens, {from: window.web3.eth.accounts[0]}).then(result => {
+            sif.mint(window.web3.eth.accounts[0], this.model.tokens, { from: window.web3.eth.accounts[0], contractAddress: "0xf17f52151EbEF6C7334FAD080c5704D77216b732"}).then(result => {
 
               console.log(result);
               console.log("after");
+              // sif.transferFrom(window.web3.eth.accounts[0], "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef", 2000, { from: window.web3.eth.accounts[0], contractAddress: "0xf17f52151EbEF6C7334FAD080c5704D77216b732" }).then(result => {
+
+              //   console.log(result);
+              //   console.log("token");
+
+              // }).catch(result => {
+              //   console.log(result);
+              // });
               
             }).catch(result => {
               console.log(result);
@@ -151,6 +160,10 @@ export class BankComponent implements OnInit {
              
             console.log(this.model.ngo[0]);
             // alert("Yessss");
+
+
+            
+
 
           })
           .catch(e => {
