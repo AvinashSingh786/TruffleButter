@@ -54,3 +54,39 @@
     </ul>
     <p><a [routerLink]="['/login']">Logout</a></p>
 </div> -->
+
+<div class="container">
+<div class="row-fluid">
+ 
+    <div class="col-md-4 chart">
+        <div>
+        <h3 class="text-center">Number of Tokens Redeemed by Merchants</h3>
+        <div style="display: block;">
+            <canvas baseChart [data]="barChartData" [labels]="barChartLabels" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)" [legend]=false></canvas>
+        </div>
+        </div>
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+    <div class="col-md-4 chart">
+        <div>
+        <h3 class="text-center">Number of Tokens minted vs burned</h3>
+        <div style="display: block;">
+            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 chart fix">
+        <div>
+        <h3 class="text-center">Goods Distribution</h3><br/>
+        <div style="display: block;">
+            <canvas baseChart [data]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType" (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)" [legend]=false></canvas>
+        </div>
+        </div>
+    </div>
+    
+</div>
+</div>

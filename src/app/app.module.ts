@@ -21,14 +21,15 @@ import { NGOComponent } from 'app/ngo/ngo.component';
 import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
 // import { QrScannerModule } from 'angular2-qrscanner';
 // import {WebCamComponent} from 'ng2-webcam';
- 
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
+    ChartsModule  
   ],
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
     GDOComponent,
     NGOComponent,
     BeneficiaryComponent,
+      
     // // WebCamComponent,
     // QrScannerModule
  
