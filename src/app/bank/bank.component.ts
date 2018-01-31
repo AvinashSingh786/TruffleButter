@@ -118,6 +118,35 @@ export class BankComponent implements OnInit {
                 this.setStatus('Error sending coin; see log.');
             });
         };
+
+    allocateTokens() {
+      this.loading = true;
+      if (confirm("Are you sure you want to allocate " + this.model.tokens + " tokens."))
+      {
+        alert(this.model.ngo);
+        alert(this.model.tokens);
+        this.setStatus('Initiating transaction... (please wait)');
+
+        this.BankContract
+          .deployed()
+          .then(bank => {
+            bank.findMerchant(this.model.ngo);
+          })
+          .then((merchant) => {
+            this.setStatus('Transaction complete!');
+            alert("WOOOW");
+            console.log(merchant);
+            
+            //this.refreshBalance();
+          })
+          .catch(e => {
+            console.log(e);
+            alert("Noooo");
+            this.setStatus('Error sending coin; see log.');
+          });
+      }
+      this.loading = false;
+    }
 }
 
 /* 

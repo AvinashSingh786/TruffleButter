@@ -9,10 +9,11 @@ import { AlertService, UserService } from '../_services/index';
 })
 
 export class RegisterComponent {
-    addBeneficiary: any = {};
-    removeBeneficiary: any = {};
-    addMerchant: any = {};
-    removeMerchant: any = {};
+    // addBeneficiary: any = {};
+    // removeBeneficiary: any = {};
+    // addMerchant: any = {};
+    // removeMerchant: any = {};
+    model: any;
     loading = false;
     loggedin = false;
 
@@ -31,7 +32,7 @@ export class RegisterComponent {
         }
          }
 
-    register() {
+    addBeneficiary() {
         this.loading = true;
         // this.userService.create(this.model)
         //     .subscribe(
@@ -41,7 +42,17 @@ export class RegisterComponent {
         //         },
         //         error => {
         //             this.alertService.error(error);
-        //             this.loading = false;
+        //              this.loading = false;
         //         });
     }
+
+    removeBeneficiary() {
+        this.loading = true;
+        if (confirm("Are you sure you want to remove this beneficiary")) {
+            this.loading = false;
+        }
+        this.loading = false;
+         
+    }
+
 }

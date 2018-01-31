@@ -66,25 +66,25 @@
                 </h4>
             </div>
             <div id="collapse3" class="panel-collapse collapse login">
-                <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                        <label for="adress">Select NGO </label>
-                        <select multiple class="form-control" id="exampleFormControlSelect2">
+                <form name="form" (ngSubmit)="f.form.valid && allocateTokens()" #f="ngForm" >
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !ngo.valid }">
+                        <label for="ngo">Select NGO </label>
+                        <select name="ngo" multiple class="form-control" id="exampleFormControlSelect2" [(ngModel)]="model.ngo" #ngo="ngModel" required>
                             <option value="0x627306090abaB3A6e1400e9345bC60c78a8BEf57">1 - Plan Uganda</option>
                             <option value="0xf17f52151EbEF6C7334FAD080c5704D77216b732">2 - UWASNET</option>
                             <option value="0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef">3 - Water Aid Uganda</option>
         
                         </select>
-                        <div *ngIf="f.submitted && !address.valid" class="help-block">Please select an NGO.</div>
+                        <div *ngIf="f.submitted && !ngo.valid" class="help-block">Please select an NGO.</div>
                     </div>
-                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                        <label for="amount">Amount</label>
-                        <input type="text" class="form-control" name="amount" [(ngModel)]="model.amount" #amount="ngModel" required />
-                        <div *ngIf="f.submitted && !amount.valid" class="help-block">Amount is required</div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !tokens.valid }">
+                        <label for="tokens">Amount</label>
+                        <input type="number" class="form-control" name="tokens" [(ngModel)]="model.tokens" #tokens="ngModel" required />
+                        <div *ngIf="f.submitted && !tokens.valid" class="help-block">Amount is required</div>
                     </div>
    
                     <div class="form-group">
-                        <button [disabled]="loading" class="btn btn-primary">
+                        <button [disabled]="loading" class="btn btn-primary" type="sumbit">
                             <i class="fa fa-plus green" aria-hidden="true"></i> Allocate</button>
                         <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
                         />

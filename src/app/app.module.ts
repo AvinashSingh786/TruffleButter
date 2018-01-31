@@ -23,14 +23,15 @@ import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
 // import {WebCamComponent} from 'ng2-webcam';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { GDOComponent } from 'app/gdo/gdo.component';
-
+ 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     routing,
-    ChartsModule  
+    ChartsModule, 
+ 
   ],
   declarations: [
     AppComponent,
