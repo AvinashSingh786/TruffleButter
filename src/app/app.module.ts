@@ -19,8 +19,6 @@ import { RegisterComponent } from './register/index';
 import { BankComponent } from 'app/bank/bank.component';
 import { NGOComponent } from 'app/ngo/ngo.component';
 import { BeneficiaryComponent } from 'app/beneficiary/beneficiary.component';
-// import { QrScannerModule } from 'angular2-qrscanner';
-// import {WebCamComponent} from 'ng2-webcam';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { GDOComponent } from 'app/gdo/gdo.component';
  
@@ -43,9 +41,6 @@ import { GDOComponent } from 'app/gdo/gdo.component';
     NGOComponent,
     BeneficiaryComponent,
     GDOComponent,
-      
-    // // WebCamComponent,
-    // QrScannerModule
  
   ],
   providers: [

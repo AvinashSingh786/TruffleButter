@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
         }
         else {
             this.loggedin = false;
-            // this.router.navigate(['/login']);
         }
     }
 
