@@ -72,9 +72,12 @@
                     <div *ngIf="f.submitted && !username.valid" class="help-block">ID / Passport is required</div>
                 </div>
                 <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-                    <label for="password">Passphrase</label>
+                    <label for="password">PIN (4 - Digits)</label>
                     <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-                    <div *ngIf="f.submitted && !password.valid" class="help-block">Passphrase is required</div>
+                    <div *ngIf="f.submitted && !password.valid" class="help-block">PIN is required</div>
+                    <br/><span class="text-center">
+                        <img src="/assets/fingerprint.png" class="img-responsive" style="height:100px;margin: 0 auto"/>
+                    </span>
                 </div>
                 <div class="form-group">
                     <button [disabled]="loading" class="btn btn-primary">
@@ -124,7 +127,7 @@
                     <a data-toggle="collapse" href="#collapse3">
                         <h2 class="">
                             <i class="fa fa-plus green" aria-hidden="true"></i> Register Merchant
-                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <i class="fa fa-cutlery" aria-hidden="true"></i>
                         </h2>
                     </a>
                 </h4>
@@ -166,7 +169,7 @@
                     <a data-toggle="collapse" href="#collapse4">
                         <h2>
                             <i class="fa fa-trash red" aria-hidden="true"></i> Remove Merchant
-                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <i class="fa fa-cutlery" aria-hidden="true"></i>
                         </h2>
                     </a>
                 </h4>
