@@ -9,7 +9,7 @@ import { AlertService, UserService } from '../_services/index';
 })
 
 export class RegisterComponent {
-    model: any = {};
+    model: any;
     loading = false;
     loggedin = false;
 
@@ -28,17 +28,17 @@ export class RegisterComponent {
         }
          }
 
-    register() {
+    addBeneficiary() {
         this.loading = true;
-        this.userService.create(this.model)
-            .subscribe(
-                data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
     }
+
+    removeBeneficiary() {
+        this.loading = true;
+        if (confirm("Are you sure you want to remove this beneficiary")) {
+            this.loading = false;
+        }
+        this.loading = false;
+         
+    }
+
 }

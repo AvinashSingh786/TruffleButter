@@ -22,22 +22,11 @@ export class HomeComponent implements OnInit {
         }
         else {
             this.loggedin = false;
-            this.router.navigate(['/login']);
         }
     }
 
     ngOnInit() {
-        this.loadAllUsers();
+         
     }
 
-    deleteUser(id: number) {
-        this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
-    }
-
-    private loadAllUsers() {
-        this.userService.getAll().subscribe(users => { this.users = users; });
-    }
-
-
- 
 }

@@ -65,7 +65,7 @@ body {margin:0;}
 
 .login {
   background-color: rgba(255,255,250, 0.5);
-  padding: 10px;
+  padding: 40px;
 }
 
 h2 {
@@ -91,4 +91,35 @@ h2 {
   text-align: center;
   margin: 0 auto;
   
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+
+.chart {
+  background-color: #333;
+  color: whitesmoke !important;
+  padding: 20px;
+  height: 100% !important;
+  
+}
+
+.fix {
+  padding-bottom: 25px;
+}
+
+
+.yellow {
+  color: goldenrod;
+}
+
+
+.fix-ben {
+  /* background-color: antiquewhite; */
 }
