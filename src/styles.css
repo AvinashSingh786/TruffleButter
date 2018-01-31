@@ -121,5 +121,6 @@ h2 {
 
 
 .fix-ben {
-  /* background-color: antiquewhite; */
+  background-color: antiquewhite;
+  color: black;
 }
