@@ -14,7 +14,7 @@ declare var window: any;
 })
 
 export class BankComponent implements OnInit {
-  BankContract = contract(bankArtifacts); //.at("0xdda6327139485221633a1fcd65f4ac932e60a2e1");
+  BankContract = contract(bankArtifacts);
   SIFContract = contract(sifArtifacts);
 
     account: any;
@@ -61,9 +61,6 @@ export class BankComponent implements OnInit {
           );
           // Use Mist/MetaMask's provider
           this.web3 = new Web3(window.web3.currentProvider);
-          // this.web3 = new Web3(
-          //   new Web3.providers.HttpProvider('http://localhost:7545')
-          // );
         } else {
           console.warn(
             'No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it\'s inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask'
@@ -74,9 +71,9 @@ export class BankComponent implements OnInit {
           );
         }
       this.SIFContract.setProvider(this.web3.currentProvider);
-    // watch for an event with {some: ‘args’}
+ 
         let self = this;
-
+ 
         this.SIFContract
           .deployed()
           .then(instance => {
@@ -107,68 +104,15 @@ export class BankComponent implements OnInit {
       }
 
     onReady = () => {
-        // Bootstrap the MetaCoin abstraction for Use.
-        // this.BankContract.setProvider(this.web3.currentProvider);
-        // this.SIFContract.setProvider(this.web3.currentProvider);
-    
-        // Get the initial account balance so it can be displayed.
-        // this.web3.eth.getAccounts((err, accs) => {
-        //   if (err != null) {
-        //     alert('There was an error fetching your accounts.');
-        //     return;
-        //   }
-    
-        //   if (accs.length === 0) {
-        //     alert(
-        //       'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
-        //     );
-        //     return;
-        //   }
-        //   this.accounts = accs;
-        //   this.account = this.accounts[0];
-    
-        //   // This is run from window:load and ZoneJS is not aware of it we
-        //   // need to use _ngZone.run() so that the UI updates on promise resolution
-        //   /* this._ngZone.run(() =>
-        //     this.refreshBalance()
-        //   ); */
-        // });
+       
       };
 
       setStatus = message => {
         this.status = message;
       };
-    
-    // addMerchant = () => {
-    //     const merchant = this.model.address;
-    //     const name = this.model.merchantname;
-    //     const typeOfGoods = this.model.goods;
-    //     let meta;
-    
-    //     this.setStatus('Initiating transaction... (please wait)');
-    
-    //     this.BankContract
-    //     .deployed()
-    //     .then(instance => {
-    //         meta = instance;
-    //         meta.addMerchant(merchant, name, typeOfGoods, {
-    //         from: this.account
-    //         });
-    //     })
-    //     .then(() => {
-    //         this.setStatus('Transaction complete!');
-    //         //this.refreshBalance();
-    //     })
-    //     .catch(e => {
-    //         console.log(e);
-    //         this.setStatus('Error sending coin; see log.');
-    //     });
-    // };
 
     allocateTokens() {
       this.loading = true;
-      // if (confirm("Are you sure you want to allocate " + this.model.tokens + " tokens."))
-      // {
         this.setStatus('Initiating transaction... (please wait)');
         let sif;
         this.SIFContract
@@ -183,32 +127,18 @@ export class BankComponent implements OnInit {
 
               this.transactionHash = result.tx;
               console.log("after");
-              // sif.transferFrom(window.web3.eth.accounts[0], "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef", 2000, { from: window.web3.eth.accounts[0], contractAddress: "0xf17f52151EbEF6C7334FAD080c5704D77216b732" }).then(result => {
-
-              //   console.log(result);
-              //   console.log("token");
-
-              // }).catch(result => {
-              //   console.log(result);
-              // });
               
             }).catch(result => {
               console.log(result);
             });
              
             console.log(this.model.ngo[0]);
-            // alert("Yessss");
-
-
-            
-
 
           })
           .catch(e => {
             console.log(e);
            
           });
-      // }
       this.loading = false;
     }
 

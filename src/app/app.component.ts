@@ -11,7 +11,6 @@ declare var window: any;
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  // MetaCoin = contract(metaincoinArtifacts);
 
   // TODO add proper types these variables
   account: any;
@@ -38,9 +37,6 @@ export class AppComponent {
   checkAndInstantiateWeb3 = () => {
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof window.web3 !== 'undefined') {
-      console.warn(
-        'Using web3 detected from external source. If you find that your accounts don\'t appear or you have 0 MetaCoin, ensure you\'ve configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask'
-      );
       // Use Mist/MetaMask's provider
       this.web3 = new Web3(window.web3.currentProvider);
     } else {
@@ -62,78 +58,5 @@ export class AppComponent {
 
       this.loggedin = false;
     }
-    // Bootstrap the MetaCoin abstraction for Use.
-  //   this.MetaCoin.setProvider(this.web3.currentProvider);
-
-  //   // Get the initial account balance so it can be displayed.
-  //   this.web3.eth.getAccounts((err, accs) => {
-  //     if (err != null) {
-  //       alert('There was an error fetching your accounts.');
-  //       return;
-  //     }
-
-  //     if (accs.length === 0) {
-  //       alert(
-  //         'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
-  //       );
-  //       return;
-  //     }
-  //     this.accounts = accs;
-  //     this.account = this.accounts[0];
-
-  //     // This is run from window:load and ZoneJS is not aware of it we
-  //     // need to use _ngZone.run() so that the UI updates on promise resolution
-  //     this._ngZone.run(() =>
-  //       this.refreshBalance()
-  //     );
-  //   });
-  // };
-
-  // refreshBalance = () => {
-  //   let meta;
-  //   this.MetaCoin
-  //     .deployed()
-  //     .then(instance => {
-  //       meta = instance;
-  //       return meta.getBalance.call(this.account, {
-  //         from: this.account
-  //       });
-  //     })
-  //     .then(value => {
-  //       this.balance = value;
-  //     })
-  //     .catch(e => {
-  //       console.log(e);
-  //       this.setStatus('Error getting balance; see log.');
-  //     });
-  // };
-
-  // setStatus = message => {
-  //   this.status = message;
-  // };
-
-  // sendCoin = () => {
-  //   const amount = this.sendingAmount;
-  //   const receiver = this.recipientAddress;
-  //   let meta;
-
-  //   this.setStatus('Initiating transaction... (please wait)');
-
-  //   this.MetaCoin
-  //     .deployed()
-  //     .then(instance => {
-  //       meta = instance;
-  //       return meta.sendCoin(receiver, amount, {
-  //         from: this.account
-  //       });
-  //     })
-  //     .then(() => {
-  //       this.setStatus('Transaction complete!');
-  //       this.refreshBalance();
-  //     })
-  //     .catch(e => {
-  //       console.log(e);
-  //       this.setStatus('Error sending coin; see log.');
-  //     });
   };
 }
