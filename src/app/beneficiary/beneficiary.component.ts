@@ -1,6 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { QrScannerModule } from 'angular2-qrscanner';
 import { Web3Service } from '../_services/index'
 @Component({
     moduleId: module.id.toString(),
