@@ -26,13 +26,13 @@ Social Impact Funding
 
     - git clone https://github.com/AvinashSingh786/TruffleButter && cd TruffleButter
 
-#### Deploy the smart contracts
-
-    - truffle migrate
-
 #### Install a bunch of node modules and whatnot
 
     - npm install
+
+#### Deploy the smart contracts
+
+    - truffle migrate
 
 #### Run dapp
 
