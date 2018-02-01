@@ -25,19 +25,11 @@ export class BankComponent implements OnInit {
     loading = false;
     returnUrl: string;
     loggedin = false;
+    transactionHash: any;
 
     public scatterChartLabels: string[] = ['BEN'];
 
-    public scatterChartData: any[] = [[{
-          x: -10,
-          y: 0
-        }, {
-          x: 0,
-          y: 10
-        }, {
-          x: 10,
-          y: 5
-        }]];
+    public scatterChartData: any[] = [ ];
     public scatterChartType: string = 'scatter';
 
     constructor(
@@ -59,6 +51,7 @@ export class BankComponent implements OnInit {
         this.checkAndInstantiateWeb3();
         this.onReady();
     };
+    
 
     checkAndInstantiateWeb3 = () => {
         // Checking if Web3 has been injected by the browser (Mist/MetaMask)
@@ -78,6 +71,9 @@ export class BankComponent implements OnInit {
           );
         }
       this.SIFContract.setProvider(this.web3.currentProvider);
+ 
+        let self = this;
+ 
         this.SIFContract
           .deployed()
           .then(instance => {
@@ -85,13 +81,22 @@ export class BankComponent implements OnInit {
             const transferEvent = sif.Transfer({ fromBlock: 0, toBlock: 'latest' });
             transferEvent.watch(function (error, result) {
               console.log(result);
-              alert("T");
             });
 
             const mintEvent = sif.Mint({ fromBlock: 0, toBlock: 'latest' });
             mintEvent.watch(function (error, result) {
               console.log(result);
-              alert("M");
+              // alert();
+              const amount = result.args.amount.toString();
+              self.web3.eth.getBlock(result.blockHash, function(e, r) {
+                  const time = r.timestamp;
+                console.log(r.timestamp);
+                  
+                  self.scatterChartData.push({x: time, y: amount});
+                
+              });
+               
+              
             });
           }).catch(e => {
             console.log(e);
@@ -120,7 +125,7 @@ export class BankComponent implements OnInit {
             console.log(this.web3);
             sif.mint(this.web3.eth.accounts[0], this.model.tokens, { from: this.web3.eth.accounts[0], contractAddress: "0xf17f52151EbEF6C7334FAD080c5704D77216b732"}).then(result => {
 
-              console.log(result);
+              this.transactionHash = result.tx;
               console.log("after");
               
             }).catch(result => {
