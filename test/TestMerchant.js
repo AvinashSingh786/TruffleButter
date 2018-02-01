@@ -15,7 +15,6 @@ contract('Bank', function (accounts) {
             assert.equal(merchant[0], "0x627306090abaB3A6e1400e9345bC60c78a8BEf57".toLowerCase(), "address does not match of added merchant");
             assert.equal(merchant[1], "BobSupplier", "type of goods does not match of added merchant");
             assert.equal(merchant[2], "Water;Apples;rice", "type of goods does not match of added merchant");
-            assert.equal(merchant[3], 0, "token balance does not match of added merchant 0");
         })
     });
 
@@ -26,7 +25,6 @@ contract('Bank', function (accounts) {
             assert.equal(merchant[0], 0, "should not have an address");
             assert.equal(merchant[1], "", "should not have a name");
             assert.equal(merchant[2], "", "should not have types of goods");
-            assert.equal(merchant[3], 0, "should not have token balance");
         })
     });
 
@@ -38,7 +36,6 @@ contract('Bank', function (accounts) {
             assert.equal(merchant[0], "0x627306090abaB3A6e1400e9345bC60c78a8BEf57".toLowerCase(), "address does not match of added merchant");
             assert.equal(merchant[1], "BobSupplier", "type of goods does not match of added merchant");
             assert.equal(merchant[2], "Water;Apples;rice", "type of goods does not match of added merchant");
-            assert.equal(merchant[3], 0, "token balance does not match of added merchant 0");
         })
     });
 
@@ -52,7 +49,6 @@ contract('Bank', function (accounts) {
             assert.equal(merchant[0], 0, "address does not match of added merchant");
             assert.equal(merchant[1], "", "type of goods does not match of added merchant");
             assert.equal(merchant[2], "", "type of goods does not match of added merchant");
-            assert.equal(merchant[3], 0, "token balance does not match of added merchant 0");
         })
     });
 
@@ -63,7 +59,6 @@ contract('Bank', function (accounts) {
             assert.equal(merchant[0], 0, "should not have an address");
             assert.equal(merchant[1], "", "should not have a name");
             assert.equal(merchant[2], "", "should not have types of goods");
-            assert.equal(merchant[3], 0, "should not have token balance");
         })
     });
     
