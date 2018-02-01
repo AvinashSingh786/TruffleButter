@@ -1,37 +1,34 @@
 pragma solidity ^0.4.18;
 
+import "zeppelin-solidity/contracts/ownership/Ownable.sol";
+
 // Bank contract, for managing merchants and tokens
 
-import "./Math/SafeMath.sol";
-
-contract Bank {
+contract Bank is Ownable {
     
-    using SafeMath for uint; // prevents underflow/overflow problem
-
     struct Merchant {
         address merchantAddress; 
         string name;
         string typeOfGoods; // colon seperated list of goods sold
-        uint tokenBalance; // number of tokens the Merchant has to redeem
     }
 
     mapping (address => Merchant) merchants;
 
     // finds and returns if a Merchant exists with the provided address
-    function findMerchant(address merchant) public view returns (address, string, string, uint) {
+    function findMerchant(address merchant) public view returns (address, string, string) {
         return (merchants[merchant].merchantAddress, merchants[merchant].name, 
-            merchants[merchant].typeOfGoods, merchants[merchant].tokenBalance);
+            merchants[merchant].typeOfGoods);
     }
 
     // adds a merchant if it does not exist
-    function addMerchant(address merchant, string name, string typeOfGoods) public {
+    function addMerchant(address merchant, string name, string typeOfGoods) onlyOwner public {
         var (m,,,) = findMerchant(merchant);
         require(m == address(0)); 
-        merchants[msg.sender] = Merchant(merchant, name, typeOfGoods, 0);
+        merchants[msg.sender] = Merchant(merchant, name, typeOfGoods);
     }
 
     //
-    function removeMerchant(address merchant) public {
+    function removeMerchant(address merchant) onlyOwner public {
         var (m,,,) = findMerchant(merchant);
         require(m != address(0)); 
         delete merchants[msg.sender];
